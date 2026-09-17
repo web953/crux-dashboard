@@ -1,89 +1,65 @@
-import fs from "node:fs/promises";
-import { access, writeFileSync, readFileSync } from "node:fs";
+import { readdir, mkdir } from "fs/promises";
+import { readFileSync, writeFileSync, existsSync } from "fs";
+import path from "path";
 
-function createOrUpdateDataChart(file, source) {
-  //read last crux
+const DATA_DIR = "./src/_data";
+const CHART_DIR = "./src/_data_chart";
 
-  const url = new URL(source, import.meta.url);
-  const json = readFileSync(url, "utf-8");
-  const data = JSON.parse(json);
+async function processAllCharts() {
+  await mkdir(CHART_DIR, { recursive: true });
 
-  // update or create
-  access(file, (err) => {
-    if (err) {
-      const newData = prepareEmptyDataForChart(data);
+  let files = [];
+  try {
+    files = await readdir(DATA_DIR);
+  } catch (err) {
+    console.log("Nessun file presente in _data.");
+    return;
+  }
 
-      let ds = JSON.stringify(newData);
-      writeFileSync(file, ds);
-      console.log("created");
-    } else {
-      const url = new URL(file, import.meta.url);
-      const json = readFileSync(url, "utf-8");
-      const allFCP = JSON.parse(json);
+  for (const file of files) {
+    if (!file.endsWith(".json")) continue;
 
-      const updateAllFCP = updateCharData(data, allFCP);
-      let ns = JSON.stringify(updateAllFCP);
-      writeFileSync(file, ns);
-      console.log("updated");
+    const dataFilePath = path.join(DATA_DIR, file);
+    const chartFilePath = path.join(CHART_DIR, file);
+
+    try {
+      const currentDataRaw = readFileSync(dataFilePath, "utf8");
+      const currentData = JSON.parse(currentDataRaw);
+
+      let chartData = [];
+      if (existsSync(chartFilePath)) {
+        chartData = JSON.parse(readFileSync(chartFilePath, "utf8"));
+      }
+
+      // Aggiorna lo storico dei dati per i grafici
+      const updatedChart = updateChartData(currentData, chartData);
+      writeFileSync(chartFilePath, JSON.stringify(updatedChart, null, 2));
+    } catch (error) {
+      console.error(`Errore nell'elaborazione del grafico per ${file}:`, error);
     }
-  });
+  }
 }
 
-function getMetric(data, metric) {
-  const dataConverted = data.metrics.map((item) => {
-    let obj = item[metric] || {};
-    obj.url = item.url.replace("https://", "");
-    return obj;
-  });
+function updateChartData(currentData, chartData) {
+  if (!Array.isArray(currentData)) return chartData;
 
-  let metricByUrl = {};
-  dataConverted.forEach((item) => {
-    metricByUrl[item.url] = item.p75;
-  });
-  return metricByUrl;
-}
+  const date = new Date().toISOString().split("T")[0];
 
-// push new data to data chart
-function updateCharData(data, dataFromFile) {
-  Object.keys(dataFromFile).forEach((metric) => {
-    const metricData = getMetric(data, metric);
+  return currentData.map((item, index) => {
+    const existingItem = chartData[index] || { ...item, history: [] };
+    const history = existingItem.history || [];
+    const filteredHistory = history.filter((h) => h.date !== date);
 
-    dataFromFile[metric].series.map((item) => {
-      item.data.push(metricData[item.name]);
-      return item;
+    filteredHistory.push({
+      date,
+      p75: item.p75 || {},
     });
-    dataFromFile[metric].categories.push(data.params.date);
-  });
-  return dataFromFile;
-}
 
-//prepare data for chart for the first time
-function prepareEmptyDataForChart(data) {
-  let tmpl = {};
-
-  ["FCP", "LCP", "INP", "CLS", "TTFB", "RTT"].forEach((metric) => {
-    tmpl[metric] = {
-      series: [],
-      categories: [],
+    return {
+      ...item,
+      history: filteredHistory,
     };
-    const metricData = getMetric(data, metric);
-    Object.keys(metricData).forEach((url) => {
-      tmpl[metric].series.push({
-        name: url,
-        data: [metricData[url]],
-      });
-    });
-    tmpl[metric].categories.push(data.params.date);
   });
-
-  return tmpl;
 }
 
-createOrUpdateDataChart(
-  "public/data-chart/crux-origin-all.json",
-  "src/_data/ecommerce-pl-origin.json",
-);
-createOrUpdateDataChart(
-  "public/data-chart/crux-home-all.json",
-  "src/_data/ecommerce-pl-url.json",
-);
+processAllCharts();
