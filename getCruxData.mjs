@@ -8,12 +8,16 @@ const API_KEY = process.env.PSIKUS;
 
 async function getDataAndSaveToFile(file, queryParams) {
   const urlOrOrigin = queryParams.origin ? "origin" : "url";
-  const device = queryParams.formFactor ? queryParams.formFactor.toLowerCase() : "phone";
   const urls = await readFile(path.join(INPUT, file), "utf8");
   const data = await getCrux(JSON.parse(urls), queryParams);
-  const fileToWrite = `${file.split(".json")[0]}-${urlOrOrigin}-${device}.json`;
   
-  // Crea la cartella src/_data se non esiste
+  // Nomenclatura compatibile con la dashboard
+  const baseName = file.split(".json")[0];
+  const device = queryParams.formFactor ? queryParams.formFactor.toLowerCase() : "phone";
+  const fileToWrite = device === "phone" 
+    ? `${baseName}-${urlOrOrigin}.json` 
+    : `${baseName}-${urlOrOrigin}-desktop.json`;
+  
   await mkdir(OUTPUT, { recursive: true });
   await writeFile(path.join(OUTPUT, fileToWrite), JSON.stringify(data));
 }
@@ -22,18 +26,12 @@ try {
   const files = await readdir(INPUT);
   for (const file of files)
     if (file.includes(".json")) {
-      // Genera solo ORIGIN (Mobile)
-      getDataAndSaveToFile(file, {
-        effectiveConnectionType: "",
-        formFactor: "PHONE",
-        origin: true,
-      });
-      // Genera solo ORIGIN (Desktop)
-      getDataAndSaveToFile(file, {
-        effectiveConnectionType: "",
-        formFactor: "DESKTOP",
-        origin: true,
-      });
+      // Genera dati Phone
+      getDataAndSaveToFile(file, { effectiveConnectionType: "", formFactor: "PHONE", origin: true });
+      getDataAndSaveToFile(file, { effectiveConnectionType: "", formFactor: "PHONE", origin: false });
+      // Genera dati Desktop
+      getDataAndSaveToFile(file, { effectiveConnectionType: "", formFactor: "DESKTOP", origin: true });
+      getDataAndSaveToFile(file, { effectiveConnectionType: "", formFactor: "DESKTOP", origin: false });
     }
 } catch (err) {
   console.error(err);
