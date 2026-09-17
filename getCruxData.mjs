@@ -8,15 +8,14 @@ const API_KEY = process.env.PSIKUS;
 
 async function getDataAndSaveToFile(file, queryParams) {
   const urlOrOrigin = queryParams.origin ? "origin" : "url";
+  const device = queryParams.formFactor ? queryParams.formFactor.toLowerCase() : "phone";
+  const baseName = file.split(".json")[0];
+  
+  // Il tipo (-origin.json o -url.json) resta rigorosamente alla fine
+  const fileToWrite = `${baseName}-${device}-${urlOrOrigin}.json`;
+
   const urls = await readFile(path.join(INPUT, file), "utf8");
   const data = await getCrux(JSON.parse(urls), queryParams);
-  
-  // Nomenclatura compatibile con la dashboard
-  const baseName = file.split(".json")[0];
-  const device = queryParams.formFactor ? queryParams.formFactor.toLowerCase() : "phone";
-  const fileToWrite = device === "phone" 
-    ? `${baseName}-${urlOrOrigin}.json` 
-    : `${baseName}-${urlOrOrigin}-desktop.json`;
   
   await mkdir(OUTPUT, { recursive: true });
   await writeFile(path.join(OUTPUT, fileToWrite), JSON.stringify(data));
