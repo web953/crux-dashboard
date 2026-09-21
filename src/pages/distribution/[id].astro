@@ -32,6 +32,15 @@ export async function getStaticPaths() {
 const { id, slug } = Astro.params;
 const currentSlug = id || slug || "";
 const DATA_DIR = "./src/_data";
+const URLS_DIR = "./src/_urls";
+
+let targetSites: string[] = [];
+try {
+  const urlsContent = await readFile(path.join(URLS_DIR, `${currentSlug}.json`), "utf-8");
+  targetSites = JSON.parse(urlsContent);
+} catch (e) {
+  targetSites = [];
+}
 
 async function loadData(variant: string) {
   try {
@@ -57,6 +66,21 @@ const views = [
   { id: "view-desktop-origin", data: desktopOrigin, active: false },
   { id: "view-desktop-url", data: desktopUrl, active: false },
 ];
+
+function normalizeUrl(str: string) {
+  if (!str) return "";
+  return str
+    .toLowerCase()
+    .replace(/^https?:\/\//, "")
+    .replace(/^www\./, "")
+    .replace(/\/$/, "")
+    .trim();
+}
+
+function getDisplayUrl(rawUrl: string) {
+  if (!rawUrl) return "Sito Web";
+  return rawUrl.replace(/^https?:\/\//, "").replace(/\/$/, "");
+}
 ---
 
 <Layout title={title}>
@@ -95,61 +119,68 @@ const views = [
       {
         views.map((view) => (
           <div class={`view-content ${view.active ? "active" : ""}`} id={view.id}>
-            {!view.data || !view.data.metrics || view.data.metrics.length === 0 ? (
-              <div class="no-data-box">
-                <p class="no-data-title">⚠️ Dati non sufficienti per questa combinazione</p>
-                <p class="no-data-desc">
-                  Il volume di visite da utenti Chrome negli ultimi 28 giorni per questa specifica combinazione di dispositivo ed analisi non ha raggiunto la <strong>soglia minima di privacy e rappresentatività</strong> richiesta da Google CrUX.
-                </p>
-                <p class="no-data-tip">
-                  💡 <em>Suggerimento:</em> Prova a selezionare <strong>📊 Intero Sito</strong> oppure passa a <strong>📱 Phone</strong> per consultare i dati aggregati del dominio.
-                </p>
-              </div>
-            ) : (
-              <div class="sites-grid">
-                {view.data.metrics.map((site: any) => (
+            <div class="sites-grid">
+              {targetSites.map((targetUrl) => {
+                const siteMetric = view.data?.metrics?.find((m: any) => {
+                  const metricUrl = m.url || m.origin || "";
+                  return normalizeUrl(metricUrl) === normalizeUrl(targetUrl);
+                });
+
+                const hasMetrics = siteMetric && metricKeys.some((k) => siteMetric[k]);
+
+                return (
                   <div class="site-card">
                     <div class="site-header">
-                      <h3>{site.url || site.origin || "Sito Web"}</h3>
+                      <h3>{getDisplayUrl(targetUrl)}</h3>
                     </div>
-                    <div class="metrics-list">
-                      {metricKeys.map((key) => {
-                        const metric = site[key];
-                        if (!metric) return null;
-                        const [good = 0, neutral = 0, poor = 0] = metric.histogram || [];
-                        const rankClass = metric.rank || "good";
-                        const isMsUnit = key !== "CLS";
-                        return (
-                          <div class="metric-row">
-                            <div class="metric-info">
-                              <span class="metric-name">{key}</span>
-                              <div class="metric-values">
-                                <span class="metric-p75">
-                                  P75: <strong>{metric.p75}{isMsUnit ? " ms" : ""}</strong>
-                                </span>
-                                <span class={`rank-badge ${rankClass}`}>
-                                  {rankClass.replace("_", " ")}
-                                </span>
+
+                    {hasMetrics ? (
+                      <div class="metrics-list">
+                        {metricKeys.map((key) => {
+                          const metric = siteMetric[key];
+                          if (!metric) return null;
+                          const [good = 0, neutral = 0, poor = 0] = metric.histogram || [];
+                          const rankClass = metric.rank || "good";
+                          const isMsUnit = key !== "CLS";
+                          return (
+                            <div class="metric-row">
+                              <div class="metric-info">
+                                <span class="metric-name">{key}</span>
+                                <div class="metric-values">
+                                  <span class="metric-p75">
+                                    P75: <strong>{metric.p75}{isMsUnit ? " ms" : ""}</strong>
+                                  </span>
+                                  <span class={`rank-badge ${rankClass}`}>
+                                    {rankClass.replace("_", " ")}
+                                  </span>
+                                </div>
+                              </div>
+                              <div class="distribution-bar" title={`Buono: ${good}%, Da migliorare: ${neutral}%, Scarso: ${poor}%`}>
+                                <div class="bar-segment good" style={`width: ${good}%`}></div>
+                                <div class="bar-segment neutral" style={`width: ${neutral}%`}></div>
+                                <div class="bar-segment poor" style={`width: ${poor}%`}></div>
+                              </div>
+                              <div class="distribution-legend">
+                                <span class="leg-good">{good}%</span>
+                                <span class="leg-neutral">{neutral}%</span>
+                                <span class="leg-poor">{poor}%</span>
                               </div>
                             </div>
-                            <div class="distribution-bar" title={`Buono: ${good}%, Da migliorare: ${neutral}%, Scarso: ${poor}%`}>
-                              <div class="bar-segment good" style={`width: ${good}%`}></div>
-                              <div class="bar-segment neutral" style={`width: ${neutral}%`}></div>
-                              <div class="bar-segment poor" style={`width: ${poor}%`}></div>
-                            </div>
-                            <div class="distribution-legend">
-                              <span class="leg-good">{good}%</span>
-                              <span class="leg-neutral">{neutral}%</span>
-                              <span class="leg-poor">{poor}%</span>
-                            </div>
-                          </div>
-                        );
-                      })}
-                    </div>
+                          );
+                        })}
+                      </div>
+                    ) : (
+                      <div class="site-no-data">
+                        <p class="site-no-data-title">⚠️ Dati insufficienti</p>
+                        <p class="site-no-data-desc">
+                          Il volume di visite per questa combinazione non ha raggiunto la <strong>soglia di privacy di Google CrUX</strong> negli ultimi 28 giorni.
+                        </p>
+                      </div>
+                    )}
                   </div>
-                ))}
-              </div>
-            )}
+                );
+              })}
+            </div>
           </div>
         ))
       }
@@ -159,6 +190,7 @@ const views = [
     <div class="legend-card">
       <h2 class="legend-title">📖 Guida all'interpretazione dei dati</h2>
       
+      <!-- Sezione Spiegazione P75 e Stati -->
       <div class="interpretation-box">
         <h3>🎯 Cos'è il valore P75 e come si legge?</h3>
         <p>
@@ -179,6 +211,18 @@ const views = [
             <span><strong>Scarso (Rosso):</strong> Una quota consistente di utenti riscontra forti rallentamenti o scatti visivi. Richiede interventi tecnici prioritari.</span>
           </div>
         </div>
+      </div>
+
+      <!-- Sezione Spiegazione Soglia di Privacy -->
+      <div class="interpretation-box">
+        <h3>🔒 Cos'è la Soglia di Privacy e a quanto ammonta?</h3>
+        <p>
+          La <strong>soglia di privacy</strong> (notata in informatica come <em>k-anonymity</em>) è un vincolo di sicurezza introdotto da Google per garantire che nessun singolo utente possa mai essere identificato o isolato tramite le statistiche di navigazione.
+        </p>
+        <p style="margin-top: 0.5rem;">
+          <strong>A quanto ammonta numericamente questa soglia?</strong><br />
+          Google non dichiara una cifra pubblica fissa (perché varia in base alla percentuale di utenti con sincronizzazione attiva), ma per sbloccare i report CrUX per un determinato URL o dispositivo sono necessarie indicativamente <strong>tra le 1.000 e le 2.000 visite mensili da parte di utenti Chrome profilati</strong> nei 28 giorni. Se una specifica combinazione (es. <em>Desktop + Home Page</em>) non raggiunge questo volume minimo di campioni unici, Google secretata il report per proteggere l'anonimato delle persone.
+        </p>
       </div>
 
       <h3 class="legend-subtitle">📚 Dettaglio delle Sigle (Core Web Vitals)</h3>
@@ -338,6 +382,9 @@ const views = [
     border-radius: 12px;
     padding: 1.25rem;
     box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
   .site-header h3 {
     font-size: 1.1rem;
@@ -408,37 +455,25 @@ const views = [
   .leg-neutral { color: #854d0e; }
   .leg-poor { color: #991b1b; }
 
-  /* Box per dati non disponibili */
-  .no-data-box {
+  .site-no-data {
     background: #fffbeb;
     border: 1px solid #fde68a;
-    border-radius: 12px;
-    padding: 2rem 1.5rem;
-    max-width: 650px;
-    margin: 2rem auto;
+    border-radius: 8px;
+    padding: 1.25rem 1rem;
     text-align: center;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    margin-top: auto;
   }
-  .no-data-title {
-    font-size: 1.1rem;
+  .site-no-data-title {
+    font-size: 0.875rem;
     font-weight: 800;
     color: #92400e;
-    margin: 0 0 0.75rem 0;
+    margin: 0 0 0.5rem 0;
   }
-  .no-data-desc {
-    font-size: 0.875rem;
+  .site-no-data-desc {
+    font-size: 0.775rem;
     color: #78350f;
-    line-height: 1.55;
-    margin: 0 0 1.25rem 0;
-  }
-  .no-data-tip {
-    font-size: 0.8125rem;
-    color: #b45309;
+    line-height: 1.45;
     margin: 0;
-    background: #fef3c7;
-    padding: 0.65rem 1rem;
-    border-radius: 6px;
-    display: inline-block;
   }
 
   /* Sezione Legenda e Interpretazione */
@@ -461,7 +496,7 @@ const views = [
     border: 1px solid #e2e8f0;
     border-radius: 10px;
     padding: 1.25rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
   }
   .interpretation-box h3 {
     font-size: 1rem;
@@ -473,12 +508,13 @@ const views = [
     font-size: 0.875rem;
     color: #475569;
     line-height: 1.5;
-    margin: 0 0 1rem 0;
+    margin: 0;
   }
   .status-explanation {
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
+    margin-top: 1rem;
   }
   .status-item {
     display: flex;
@@ -492,7 +528,7 @@ const views = [
     font-size: 1.1rem;
     font-weight: 700;
     color: #1e293b;
-    margin: 0 0 1rem 0;
+    margin: 1.5rem 0 1rem 0;
   }
   .legend-grid {
     display: grid;
