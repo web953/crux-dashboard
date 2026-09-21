@@ -12,7 +12,6 @@ try {
   files = [];
 }
 
-// Estrae solo i nomi unici dei gruppi (es. siti-greenblu)
 const groupsMap = new Map();
 
 files.forEach((file) => {
@@ -21,6 +20,7 @@ files.forEach((file) => {
   const baseGroup = file
     .replace("-desktop", "")
     .replace("-phone", "")
+    .replace("-master", "")
     .replace("-origin.json", "")
     .replace("-url.json", "")
     .replace(".json", "");
