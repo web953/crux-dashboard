@@ -1,11 +1,12 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { readdir } from "fs/promises";
+import { readdir, mkdir } from "fs/promises";
 
 const DATA_DIR = "./src/_data";
 let files: string[] = [];
 
 try {
+  await mkdir(DATA_DIR, { recursive: true });
   files = await readdir(DATA_DIR);
 } catch (e) {
   files = [];
