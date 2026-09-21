@@ -1,274 +1,86 @@
 ---
-import fs from "node:fs/promises";
-import path from "node:path";
-import process from "node:process";
-import Layout from "$layouts/Layout.astro";
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+import { readdir } from "fs/promises";
 
-const dataDir = path.join(process.cwd(), "src/_data");
-const files = await fs.readdir(dataDir, "utf-8");
+const DATA_DIR = "./src/_data";
+let files: string[] = [];
 
-const pages = files
-  .filter((item) => item.indexOf(".json") > -1)
-  .map((item) => item.split(".json")[0])
-  .sort();
+try {
+  files = await readdir(DATA_DIR);
+} catch (e) {
+  files = [];
+}
 
-const groups = pages.reduce((acc, page) => {
-  const base = page.replace(/-origin|-url$/, "");
-  const type = page.endsWith("-origin") ? "origin" : "url";
-  const region = page.replace(/^[a-z]+-/, "").replace(/-origin|-url$/, "");
+// Estrae i gruppi unici (es. siti-greenblu, siti-nicolaus, ecc.)
+const groupsMap = new Map();
+
+files.forEach((file) => {
+  if (!file.endsWith(".json")) return;
   
-  if (!acc[base]) acc[base] = { origin: null, url: null, region };
-  acc[base][type] = page;
-  return acc;
-}, {});
+  // Pulizia del nome file per identificare il gruppo base
+  const baseGroup = file
+    .replace("-desktop", "")
+    .replace("-phone", "")
+    .replace("-origin.json", "")
+    .replace("-url.json", "")
+    .replace(".json", "");
 
-const sites = Object.entries(groups).map(([name, data]) => ({
-  name: name.charAt(0).toUpperCase() + name.slice(1).replace(/-/g, " "),
-  ...data
-}));
+  if (!groupsMap.has(baseGroup)) {
+    groupsMap.set(baseGroup, {
+      title: baseGroup.replace("siti-", "Siti ").replaceAll("-", " "),
+      slug: baseGroup,
+    });
+  }
+});
 
-const title = "CrUX Dashboard";
+const groups = Array.from(groupsMap.values());
 ---
 
-<Layout title={title}>
-  <main>
-    <header class="hero">
-      <div class="hero-content">
-        <h1>{title}</h1>
-        <p class="subtitle">Chrome User Experience Metrics</p>
-      </div>
-      <div class="hero-stats">
-        <div class="stat">
-          <span class="stat-value">{sites.length}</span>
-          <span class="stat-label">Sites</span>
-        </div>
-        <div class="stat">
-          <span class="stat-value">{pages.length}</span>
-          <span class="stat-label">Endpoints</span>
-        </div>
-      </div>
-    </header>
+<Layout title="CrUX Dashboard">
+  <main class="container mx-auto p-6">
+    <h1 class="text-3xl font-bold mb-8">CrUX Dashboard</h1>
 
-    <section class="sites-grid">
-      {sites.map((site) => (
-        <article class="site-card">
-          <header class="card-header">
-            <h2>{site.name}</h2>
-            <span class="region-badge">{site.region.toUpperCase()}</span>
-          </header>
-          <div class="card-links">
-            <a href={`/distribution/${site.origin}`} class="link distribution">
-              <span class="link-icon">◐</span>
-              <span class="link-text">
-                <strong>Distribution</strong>
-                <small>Intero Sito</small>
-              </span>
-            </a>
-            <a href={`/distribution/${site.url}`} class="link distribution">
-              <span class="link-icon">◑</span>
-              <span class="link-text">
-                <strong>Distribution</strong>
-                <small>Home Page</small>
-              </span>
-            </a>
-            <a href={`/p75/${site.origin}`} class="link p75">
-              <span class="link-icon">◇</span>
-              <span class="link-text">
-                <strong>P75</strong>
-                <small>Intero Sito</small>
-              </span>
-            </a>
-            <a href={`/p75/${site.url}`} class="link p75">
-              <span class="link-icon">◆</span>
-              <span class="link-text">
-                <strong>P75</strong>
-                <small>Home Page</small>
-              </span>
-            </a>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {groups.map((group) => (
+        <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm flex flex-col justify-between">
+          <h2 class="text-xl font-bold capitalize mb-4 text-gray-800">
+            {group.title}
+          </h2>
+
+          <div class="space-y-4">
+            <!-- Sezione Mobile -->
+            <div class="bg-gray-50 p-3 rounded-lg border border-gray-100">
+              <div class="text-xs font-bold text-gray-500 uppercase mb-2 flex items-center gap-1">
+                📱 Phone / Mobile
+              </div>
+              <div class="grid grid-cols-2 gap-2 text-xs font-semibold">
+                <a href={`/distribution/${group.slug}-phone-origin`} class="p-2 bg-indigo-50 text-indigo-700 rounded hover:bg-indigo-100 text-center">
+                  📊 Intero Sito
+                </a>
+                <a href={`/distribution/${group.slug}-phone-url`} class="p-2 bg-indigo-50 text-indigo-700 rounded hover:bg-indigo-100 text-center">
+                  🏠 Home Page
+                </a>
+              </div>
+            </div>
+
+            <!-- Sezione Desktop -->
+            <div class="bg-gray-50 p-3 rounded-lg border border-gray-100">
+              <div class="text-xs font-bold text-gray-500 uppercase mb-2 flex items-center gap-1">
+                💻 Desktop
+              </div>
+              <div class="grid grid-cols-2 gap-2 text-xs font-semibold">
+                <a href={`/distribution/${group.slug}-desktop-origin`} class="p-2 bg-emerald-50 text-emerald-700 rounded hover:bg-emerald-100 text-center">
+                  📊 Intero Sito
+                </a>
+                <a href={`/distribution/${group.slug}-desktop-url`} class="p-2 bg-emerald-50 text-emerald-700 rounded hover:bg-emerald-100 text-center">
+                  🏠 Home Page
+                </a>
+              </div>
+            </div>
           </div>
-        </article>
+        </div>
       ))}
-    </section>
+    </div>
   </main>
 </Layout>
-
-<style>
-  main {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem;
-  }
-
-  .hero {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    margin-bottom: 3rem;
-    padding-bottom: 2rem;
-    border-bottom: 2px solid var(--color-border, #e0e0e0);
-  }
-
-  .hero-content h1 {
-    font-size: 3rem;
-    font-weight: 800;
-    letter-spacing: -0.03em;
-    margin: 0;
-    line-height: 1;
-  }
-
-  .subtitle {
-    font-size: 1rem;
-    color: #666;
-    margin-top: 0.5rem;
-    font-family: "IBM Plex Mono", monospace;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-  }
-
-  .hero-stats {
-    display: flex;
-    gap: 2rem;
-  }
-
-  .stat {
-    text-align: center;
-  }
-
-  .stat-value {
-    display: block;
-    font-size: 2.5rem;
-    font-weight: 700;
-    font-family: "IBM Plex Mono", monospace;
-    line-height: 1;
-  }
-
-  .stat-label {
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: #888;
-  }
-
-  .sites-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 1.5rem;
-  }
-
-  .site-card {
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    padding: 1.5rem;
-    transition: all 0.2s ease;
-    background: #fafafa;
-  }
-
-  .site-card:hover {
-    border-color: #333;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
-  }
-
-  .card-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 1.25rem;
-    padding-bottom: 1rem;
-    border-bottom: 1px solid #e0e0e0;
-  }
-
-  .card-header h2 {
-    font-size: 1.25rem;
-    font-weight: 600;
-    margin: 0;
-  }
-
-  .region-badge {
-    font-size: 0.65rem;
-    font-weight: 600;
-    padding: 0.25rem 0.5rem;
-    background: #222;
-    color: #fff;
-    border-radius: 4px;
-    letter-spacing: 0.05em;
-  }
-
-  .card-links {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0.5rem;
-  }
-
-  .link {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    padding: 0.75rem 1rem;
-    border-radius: 6px;
-    text-decoration: none;
-    transition: all 0.15s ease;
-  }
-
-  .link.distribution {
-    background: linear-gradient(135deg, #fff 0%, #f5f5f5 100%);
-    border: 1px solid #e0e0e0;
-  }
-
-  .link.p75 {
-    background: linear-gradient(135deg, #fafafa 0%, #f0f0f0 100%);
-    border: 1px solid #e0e0e0;
-  }
-
-  .link:hover {
-    border-color: #333;
-  }
-
-  .link-icon {
-    font-size: 1.25rem;
-    width: 2rem;
-    height: 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 4px;
-    background: #222;
-    color: #fff;
-  }
-
-  .link.distribution .link-icon {
-    background: linear-gradient(135deg, #6366f1, #8b5cf6);
-  }
-
-  .link.p75 .link-icon {
-    background: linear-gradient(135deg, #10b981, #059669);
-  }
-
-  .link-text {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .link-text strong {
-    font-size: 0.95rem;
-    font-weight: 600;
-    color: #222;
-  }
-
-  .link-text small {
-    font-size: 0.75rem;
-    color: #888;
-  }
-
-  @media (max-width: 640px) {
-    .hero {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 1.5rem;
-    }
-
-    .hero-content h1 {
-      font-size: 2rem;
-    }
-  }
-</style>
