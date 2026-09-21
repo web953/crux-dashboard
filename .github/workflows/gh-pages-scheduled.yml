@@ -1,13 +1,14 @@
-name: updata data scheduled
+name: Update CrUX Dashboard
 
 on:
   schedule:
-    # * is a special character in YAML so you have to quote this string
-    - cron: "0 7 * * *"
-  workflow_dispatch:
+    - cron: '0 6 * * *' # Mantiene l'esecuzione giornaliera
+  workflow_dispatch: # Mantiene l'avvio manuale
+  repository_dispatch:
+    types: [sheets_update] # Trigger ricevuto da Google Sheets
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
