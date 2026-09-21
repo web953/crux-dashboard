@@ -1,48 +1,233 @@
 ---
-import fs from 'node:fs/promises';
-import path from 'node:path';
-import process from 'node:process';
-import Layout from '$layouts/Layout.astro'
-
-// Component Imports
-import MetricsByUrl from '$components/MetricsByUrl.svelte';
-import Header from '$components/Header.astro';
-
-let title = 'CrUX Dashboard - distribution';
+import Layout from "../../layouts/Layout.astro";
+import { readdir, readFile } from "fs/promises";
+import path from "path";
 
 export async function getStaticPaths() {
+  const DATA_DIR = "./src/_data";
+  let files: string[] = [];
+  try {
+    files = await readdir(DATA_DIR);
+  } catch (e) {
+    files = [];
+  }
 
-const dataDir = path.join(process.cwd(), 'src/_data');
-const files = await fs.readdir(dataDir, 'utf-8');
-
-let pages = files.filter(item => {
-    return item.indexOf('.json') > -1
-  }).map(item => {
-    return {params: {'id': item.split('.json')[0]}}  // crux-origin.json => origin
+  const groupsSet = new Set<string>();
+  files.forEach((file) => {
+    if (!file.endsWith(".json")) return;
+    const baseGroup = file
+      .replace("-desktop", "")
+      .replace("-phone", "")
+      .replace("-origin.json", "")
+      .replace("-url.json", "")
+      .replace(".json", "");
+    groupsSet.add(baseGroup);
   });
-  return pages;
+
+  return Array.from(groupsSet).map((slug) => ({
+    params: { slug },
+  }));
 }
-const {id} = Astro.params;
 
-const url = path.join(process.cwd(), `src/_data/${id}.json`);
-const json = await fs.readFile(url, 'utf-8');
-const data = JSON.parse(json);
+const { slug } = Astro.params;
+const DATA_DIR = "./src/_data";
 
-console.log(data.params);
+// Carica le 4 combinazioni di dati
+async function loadData(variant: string) {
+  try {
+    const filePath = path.join(DATA_DIR, `${slug}-${variant}.json`);
+    const content = await readFile(filePath, "utf-8");
+    return JSON.parse(content);
+  } catch (e) {
+    return null;
+  }
+}
+
+const phoneOrigin = await loadData("phone-origin");
+const phoneUrl = await loadData("phone-url");
+const desktopOrigin = await loadData("desktop-origin");
+const desktopUrl = await loadData("desktop-url");
+
+const title = slug ? slug.replace("siti-", "Siti ").replaceAll("-", " ") : "";
 ---
-<Layout title={title}>
 
-   <main>
-   { data.params  &&
-        <header>
-            <div>
-                <h1>{title}</h1>
-                <Header params={data.params}/>
-            </div>
-        </header>
-        <section>
-            <MetricsByUrl data = {data}/>
-        </section>
-}
-    </main>
+<Layout title={title}>
+  <main class="page-container">
+    <div class="top-bar">
+      <a href="/" class="back-link">← Torna alla Dashboard</a>
+      <h1 class="page-title">{title}</h1>
+    </div>
+
+    <!-- Pannello dei Filtri Interattivi -->
+    <div class="filter-panel">
+      <div class="filter-group">
+        <span class="filter-label">Dispositivo:</span>
+        <div class="toggle-buttons">
+          <button class="toggle-btn active" data-device="phone">📱 Phone</button>
+          <button class="toggle-btn" data-device="desktop">💻 Desktop</button>
+        </div>
+      </div>
+
+      <div class="filter-group">
+        <span class="filter-label">Analisi:</span>
+        <div class="toggle-buttons">
+          <button class="toggle-btn active" data-scope="origin">📊 Intero Sito</button>
+          <button class="toggle-btn" data-scope="url">🏠 Home Page</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sezioni Dati -->
+    <div class="views-container">
+      <div class="view-content active" id="view-phone-origin">
+        <h2>Report: Phone / Intero Sito</h2>
+        {phoneOrigin ? <pre class="data-box">{JSON.stringify(phoneOrigin, null, 2)}</pre> : <p class="no-data">Dati non disponibili per questa combinazione.</p>}
+      </div>
+
+      <div class="view-content" id="view-phone-url">
+        <h2>Report: Phone / Home Page</h2>
+        {phoneUrl ? <pre class="data-box">{JSON.stringify(phoneUrl, null, 2)}</pre> : <p class="no-data">Dati non disponibili per questa combinazione.</p>}
+      </div>
+
+      <div class="view-content" id="view-desktop-origin">
+        <h2>Report: Desktop / Intero Sito</h2>
+        {desktopOrigin ? <pre class="data-box">{JSON.stringify(desktopOrigin, null, 2)}</pre> : <p class="no-data">Dati non disponibili per questa combinazione.</p>}
+      </div>
+
+      <div class="view-content" id="view-desktop-url">
+        <h2>Report: Desktop / Home Page</h2>
+        {desktopUrl ? <pre class="data-box">{JSON.stringify(desktopUrl, null, 2)}</pre> : <p class="no-data">Dati non disponibili per questa combinazione.</p>}
+      </div>
+    </div>
+  </main>
 </Layout>
+
+<script>
+  let currentDevice = "phone";
+  let currentScope = "origin";
+
+  function updateView() {
+    // Gestione stato pulsanti
+    document.querySelectorAll("[data-device]").forEach((btn) => {
+      btn.classList.toggle("active", btn.getAttribute("data-device") === currentDevice);
+    });
+    document.querySelectorAll("[data-scope]").forEach((btn) => {
+      btn.classList.toggle("active", btn.getAttribute("data-scope") === currentScope);
+    });
+
+    // Mostra la vista selezionata
+    document.querySelectorAll(".view-content").forEach((view) => {
+      view.classList.remove("active");
+    });
+    const activeView = document.getElementById(`view-${currentDevice}-${currentScope}`);
+    if (activeView) {
+      activeView.classList.add("active");
+    }
+  }
+
+  document.querySelectorAll("[data-device]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      currentDevice = btn.getAttribute("data-device") || "phone";
+      updateView();
+    });
+  });
+
+  document.querySelectorAll("[data-scope]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      currentScope = btn.getAttribute("data-scope") || "origin";
+      updateView();
+    });
+  });
+</script>
+
+<style>
+  .page-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    font-family: system-ui, -apple-system, sans-serif;
+  }
+  .top-bar {
+    margin-bottom: 1.5rem;
+  }
+  .back-link {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.875rem;
+  }
+  .page-title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #111827;
+    margin: 0.5rem 0 0 0;
+    text-transform: capitalize;
+  }
+  .filter-panel {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 1rem 1.25rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+  .filter-group {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .filter-label {
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: #475569;
+  }
+  .toggle-buttons {
+    display: flex;
+    background: #e2e8f0;
+    padding: 3px;
+    border-radius: 8px;
+    gap: 2px;
+  }
+  .toggle-btn {
+    border: none;
+    background: transparent;
+    padding: 0.4rem 0.85rem;
+    border-radius: 6px;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: #64748b;
+    cursor: pointer;
+    transition: all 0.15s ease;
+  }
+  .toggle-btn.active {
+    background: #ffffff;
+    color: #0f172a;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  }
+  .view-content {
+    display: none;
+  }
+  .view-content.active {
+    display: block;
+  }
+  .view-content h2 {
+    font-size: 1.25rem;
+    color: #1e293b;
+    margin-bottom: 1rem;
+  }
+  .data-box {
+    background: #0f172a;
+    color: #38bdf8;
+    padding: 1.25rem;
+    border-radius: 8px;
+    overflow-x: auto;
+    font-size: 0.85rem;
+  }
+  .no-data {
+    color: #94a3b8;
+    font-style: italic;
+  }
+</style>
