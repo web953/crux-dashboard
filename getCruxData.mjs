@@ -20,5 +20,7 @@ async function getSitesFromSheet() {
       groups[slug].push(url);
     }
   });
+  console.log("=== SITI CARICATI DA GOOGLE SHEETS ===");
+  console.log(groups);
   return groups; // Restituisce { "siti-greenblu": ["https://..."], ... }
 }
