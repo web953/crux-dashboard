@@ -50,6 +50,13 @@ const desktopUrl = await loadData("desktop-url");
 
 const title = currentSlug ? currentSlug.replace("siti-", "Siti ").replaceAll("-", " ") : "";
 const metricKeys = ["LCP", "INP", "CLS", "FCP", "TTFB"];
+
+const views = [
+  { id: "view-phone-origin", data: phoneOrigin, active: true },
+  { id: "view-phone-url", data: phoneUrl, active: false },
+  { id: "view-desktop-origin", data: desktopOrigin, active: false },
+  { id: "view-desktop-url", data: desktopUrl, active: false },
+];
 ---
 
 <Layout title={title}>
@@ -78,70 +85,59 @@ const metricKeys = ["LCP", "INP", "CLS", "FCP", "TTFB"];
       </div>
     </div>
 
-    <!-- Sezioni Viste -->
+    <!-- Viste Dati -->
     <div class="views-container">
-      <div class="view-content active" id="view-phone-origin">
-        {renderReport(phoneOrigin, metricKeys)}
-      </div>
-      <div class="view-content" id="view-phone-url">
-        {renderReport(phoneUrl, metricKeys)}
-      </div>
-      <div class="view-content" id="view-desktop-origin">
-        {renderReport(desktopOrigin, metricKeys)}
-      </div>
-      <div class="view-content" id="view-desktop-url">
-        {renderReport(desktopUrl, metricKeys)}
-      </div>
+      {
+        views.map((view) => (
+          <div class={`view-content ${view.active ? "active" : ""}`} id={view.id}>
+            {!view.data || !view.data.metrics || view.data.metrics.length === 0 ? (
+              <p class="no-data">Dati non disponibili per questa combinazione.</p>
+            ) : (
+              <div class="sites-grid">
+                {view.data.metrics.map((site: any) => (
+                  <div class="site-card">
+                    <div class="site-header">
+                      <h3>{site.url || site.origin || "Sito Web"}</h3>
+                    </div>
+                    <div class="metrics-list">
+                      {metricKeys.map((key) => {
+                        const metric = site[key];
+                        if (!metric) return null;
+                        const [good = 0, neutral = 0, poor = 0] = metric.histogram || [];
+                        const rankClass = metric.rank || "good";
+                        return (
+                          <div class="metric-row">
+                            <div class="metric-info">
+                              <span class="metric-name">{key}</span>
+                              <div class="metric-values">
+                                <span class="metric-p75">P75: <strong>{metric.p75}</strong></span>
+                                <span class={`rank-badge ${rankClass}`}>{rankClass.replace("_", " ")}</span>
+                              </div>
+                            </div>
+                            <div class="distribution-bar" title={`Buono: ${good}%, Da migliorare: ${neutral}%, Scarso: ${poor}%`}>
+                              <div class="bar-segment good" style={`width: ${good}%`}></div>
+                              <div class="bar-segment neutral" style={`width: ${neutral}%`}></div>
+                              <div class="bar-segment poor" style={`width: ${poor}%`}></div>
+                            </div>
+                            <div class="distribution-legend">
+                              <span class="leg-good">{good}%</span>
+                              <span class="leg-neutral">{neutral}%</span>
+                              <span class="leg-poor">{poor}%</span>
+                            </div>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        ))
+      }
     </div>
   </main>
 </Layout>
-
-<% function renderReport(data: any, keys: string[]) { %>
-  {!data || !data.metrics || data.metrics.length === 0 ? (
-    <p class="no-data">Dati non disponibili per questa combinazione.</p>
-  ) : (
-    <div class="sites-grid">
-      {data.metrics.map((site: any) => (
-        <div class="site-card">
-          <div class="site-header">
-            <h3>{site.url || site.origin || "Sito Web"}</h3>
-          </div>
-          <div class="metrics-list">
-            {keys.map((key) => {
-              const metric = site[key];
-              if (!metric) return null;
-              const [good = 0, neutral = 0, poor = 0] = metric.histogram || [];
-              const rankClass = metric.rank || "good";
-              return (
-                <div class="metric-row">
-                  <div class="metric-info">
-                    <span class="metric-name">{key}</span>
-                    <div class="metric-values">
-                      <span class="metric-p75">P75: <strong>{metric.p75}</strong></span>
-                      <span class={`rank-badge ${rankClass}`}>{rankClass.replace("_", " ")}</span>
-                    </div>
-                  </div>
-                  
-                  <!-- Barra della Distribuzione -->
-                  <div class="distribution-bar" title={`Buono: ${good}%, Da migliorare: ${neutral}%, Scarso: ${poor}%`}>
-                    <div class="bar-segment good" style={`width: ${good}%`}></div>
-                    <div class="bar-segment neutral" style={`width: ${neutral}%`}></div>
-                    <div class="bar-segment poor" style={`width: ${poor}%`}></div>
-                  </div>
-                  <div class="distribution-legend">
-                    <span class="leg-good">{good}%</span>
-                    <span class="leg-neutral">{neutral}%</span>
-                    <span class="leg-poor">{poor}%</span>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      ))}
-    </div>
-  )}
-<% } %>
 
 <script>
   let currentDevice = "phone";
