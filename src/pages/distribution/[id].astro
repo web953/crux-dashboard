@@ -42,6 +42,25 @@ try {
   targetSites = [];
 }
 
+// Normalizza e pulisce l'URL per il confronto e la visualizzazione (rimuove protocollo, www e slash finale)
+function normalizeUrl(str: string) {
+  if (!str) return "";
+  return str
+    .toLowerCase()
+    .replace(/^https?:\/\//, "")
+    .replace(/^www\./, "")
+    .replace(/\/$/, "")
+    .trim();
+}
+
+function getDisplayUrl(rawUrl: string) {
+  if (!rawUrl) return "Sito Web";
+  return normalizeUrl(rawUrl);
+}
+
+// Ordina i siti della lista in ordine alfabetico in base al dominio pulito
+targetSites.sort((a, b) => getDisplayUrl(a).localeCompare(getDisplayUrl(b)));
+
 async function loadData(variant: string) {
   try {
     const filePath = path.join(DATA_DIR, `${currentSlug}-${variant}.json`);
@@ -66,21 +85,6 @@ const views = [
   { id: "view-desktop-origin", data: desktopOrigin, active: false },
   { id: "view-desktop-url", data: desktopUrl, active: false },
 ];
-
-function normalizeUrl(str: string) {
-  if (!str) return "";
-  return str
-    .toLowerCase()
-    .replace(/^https?:\/\//, "")
-    .replace(/^www\./, "")
-    .replace(/\/$/, "")
-    .trim();
-}
-
-function getDisplayUrl(rawUrl: string) {
-  if (!rawUrl) return "Sito Web";
-  return rawUrl.replace(/^https?:\/\//, "").replace(/\/$/, "");
-}
 ---
 
 <Layout title={title}>
