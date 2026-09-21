@@ -66,7 +66,7 @@ const views = [
       <h1 class="page-title">{title}</h1>
     </div>
 
-    <!-- Testo Esplicativo -->
+    <!-- Banner Informativo -->
     <div class="info-banner">
       💡 <strong>Nota sui dati:</strong> Le metriche mostrate rappresentano le prestazioni reali (CrUX) misurate da Google su utenti effettivi negli ultimi 28 giorni, in base al dispositivo (Phone/Desktop) e all'ambito di analisi (Intero Sito/Home Page) selezionati.
     </div>
@@ -145,6 +145,58 @@ const views = [
           </div>
         ))
       }
+    </div>
+
+    <!-- Guida alla Lettura e Legenda Metriche -->
+    <div class="legend-card">
+      <h2 class="legend-title">📖 Guida all'interpretazione dei dati</h2>
+      
+      <!-- Sezione Spiegazione P75 e Stati -->
+      <div class="interpretation-box">
+        <h3>🎯 Cos'è il valore P75 e come si legge?</h3>
+        <p>
+          Google valuta le prestazioni SEO di un sito basandosi sul <strong>P75 (75° Percentile)</strong> degli utenti reali negli ultimi 28 giorni. 
+          Significa che il <strong>75% dei visitatori</strong> ha sperimentato tempi uguali o migliori rispetto al valore indicato.
+        </p>
+        <div class="status-explanation">
+          <div class="status-item">
+            <span class="rank-badge good">GOOD</span>
+            <span><strong>Buono (Verde):</strong> Almeno il <strong>75% degli utenti</strong> naviga in modo veloce e privo di ostacoli. Il sito supera pienamente le valutazioni Core Web Vitals.</span>
+          </div>
+          <div class="status-item">
+            <span class="rank-badge average">AVERAGE</span>
+            <span><strong>Da migliorare (Arancione):</strong> Le prestazioni sono accettabili, ma la percentuale di utenti con caricamento veloce è sotto il 75%. Utile intervenire per migliorare la SEO.</span>
+          </div>
+          <div class="status-item">
+            <span class="rank-badge poor">POOR</span>
+            <span><strong>Scarso (Rosso):</strong> Una quota consistente di utenti riscontra forti rallentamenti o scatti visivi. Richiede interventi tecnici prioritari.</span>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="legend-subtitle">📚 Dettaglio delle Sigle (Core Web Vitals)</h3>
+      <div class="legend-grid">
+        <div class="legend-item">
+          <strong>LCP</strong> <em>(Largest Contentful Paint)</em>
+          <p>Tempo impiegato per visualizzare l'elemento grafico più grande nella schermata (banner principale o immagine di copertina). <br>🎯 <strong>Obiettivo:</strong> ≤ 2500 ms</p>
+        </div>
+        <div class="legend-item">
+          <strong>INP</strong> <em>(Interaction to Next Paint)</em>
+          <p>Misura la reattività della pagina dopo che l'utente effettua un'interazione (click su pulsanti, menu o touch su schermo). <br>🎯 <strong>Obiettivo:</strong> ≤ 200 ms</p>
+        </div>
+        <div class="legend-item">
+          <strong>CLS</strong> <em>(Cumulative Layout Shift)</em>
+          <p>Valuta la stabilità grafica della pagina, verificando che gli elementi non si spostino in modo fastidioso durante il caricamento. <br>🎯 <strong>Obiettivo:</strong> ≤ 0.10</p>
+        </div>
+        <div class="legend-item">
+          <strong>FCP</strong> <em>(First Contentful Paint)</em>
+          <p>Tempo trascorso prima che compaia a schermo il primo elemento di testo o immagine del sito. <br>🎯 <strong>Obiettivo:</strong> ≤ 1800 ms</p>
+        </div>
+        <div class="legend-item">
+          <strong>TTFB</strong> <em>(Time to First Byte)</em>
+          <p>Velocità di risposta iniziale dell'hosting/server alla richiesta del browser prima di iniziare il download. <br>🎯 <strong>Obiettivo:</strong> ≤ 800 ms</p>
+        </div>
+      </div>
     </div>
   </main>
 </Layout>
@@ -356,5 +408,86 @@ const views = [
     background: #f8fafc;
     border-radius: 8px;
     text-align: center;
+  }
+
+  /* Sezione Legenda e Interpretazione */
+  .legend-card {
+    margin-top: 3rem;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 1.75rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
+  .legend-title {
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 0 0 1.5rem 0;
+  }
+  .interpretation-box {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 1.25rem;
+    margin-bottom: 2rem;
+  }
+  .interpretation-box h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 0 0 0.5rem 0;
+  }
+  .interpretation-box p {
+    font-size: 0.875rem;
+    color: #475569;
+    line-height: 1.5;
+    margin: 0 0 1rem 0;
+  }
+  .status-explanation {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .status-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    font-size: 0.8125rem;
+    color: #334155;
+    line-height: 1.4;
+  }
+  .legend-subtitle {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 0 0 1rem 0;
+  }
+  .legend-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.25rem;
+  }
+  .legend-item {
+    background: #f8fafc;
+    border: 1px solid #f1f5f9;
+    border-radius: 8px;
+    padding: 1rem;
+    font-size: 0.8125rem;
+  }
+  .legend-item strong {
+    color: #1e293b;
+    font-size: 0.95rem;
+  }
+  .legend-item em {
+    color: #64748b;
+    font-size: 0.75rem;
+    display: block;
+    margin-bottom: 0.35rem;
+  }
+  .legend-item p {
+    color: #475569;
+    margin: 0;
+    line-height: 1.45;
   }
 </style>
