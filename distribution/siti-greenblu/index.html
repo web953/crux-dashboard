@@ -1,0 +1,2727 @@
+<!DOCTYPE html><html lang="en" data-astro-cid-ju4pidww><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width"><title>Siti greenblu</title><link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="stylesheet" href="/style/global.css"><style>nav[data-astro-cid-ju4pidww] ul[data-astro-cid-ju4pidww],li[data-astro-cid-ju4pidww]{margin-bottom:2em;list-style:none}nav[data-astro-cid-ju4pidww] li[data-astro-cid-ju4pidww]{margin:0 10px;display:inline-block}nav[data-astro-cid-ju4pidww] span[data-astro-cid-ju4pidww]{color:bisque;font-weight:700}nav[data-astro-cid-ju4pidww] ul[data-astro-cid-ju4pidww]{background:#000;padding:5px;top:0;right:0}nav[data-astro-cid-ju4pidww] a[data-astro-cid-ju4pidww],nav[data-astro-cid-ju4pidww] li[data-astro-cid-ju4pidww]{color:#fff}
+.page-container[data-astro-cid-qulgs7oj]{max-width:1100px;margin:0 auto;padding:2rem 1rem;font-family:system-ui,-apple-system,sans-serif}.top-bar[data-astro-cid-qulgs7oj]{margin-bottom:1.5rem}.back-link[data-astro-cid-qulgs7oj]{color:#2563eb;font-size:.875rem;font-weight:600;text-decoration:none}.page-title[data-astro-cid-qulgs7oj]{color:#111827;text-transform:capitalize;margin:.5rem 0 0;font-size:2rem;font-weight:800}.filter-panel[data-astro-cid-qulgs7oj]{background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;flex-wrap:wrap;align-items:center;gap:1.5rem;margin-bottom:2rem;padding:1rem 1.25rem;display:flex}.filter-group[data-astro-cid-qulgs7oj]{align-items:center;gap:.75rem;display:flex}.filter-label[data-astro-cid-qulgs7oj]{color:#475569;font-size:.875rem;font-weight:700}.toggle-buttons[data-astro-cid-qulgs7oj]{background:#e2e8f0;border-radius:8px;gap:2px;padding:3px;display:flex}.toggle-btn[data-astro-cid-qulgs7oj]{color:#64748b;cursor:pointer;background:0 0;border:none;border-radius:6px;padding:.4rem .85rem;font-size:.8125rem;font-weight:600;transition:all .15s}.toggle-btn[data-astro-cid-qulgs7oj].active{color:#0f172a;background:#fff;box-shadow:0 1px 3px #0000001a}.view-content[data-astro-cid-qulgs7oj]{display:none}.view-content[data-astro-cid-qulgs7oj].active{display:block}.view-content[data-astro-cid-qulgs7oj] h2[data-astro-cid-qulgs7oj]{color:#1e293b;margin-bottom:1rem;font-size:1.25rem}.data-box[data-astro-cid-qulgs7oj]{color:#38bdf8;background:#0f172a;border-radius:8px;padding:1.25rem;font-size:.85rem;overflow-x:auto}.no-data[data-astro-cid-qulgs7oj]{color:#94a3b8;font-style:italic}
+</style></head><body data-astro-cid-ju4pidww><main class="page-container" data-astro-cid-qulgs7oj><div class="top-bar" data-astro-cid-qulgs7oj><a href="/" class="back-link" data-astro-cid-qulgs7oj>← Torna alla Dashboard</a><h1 class="page-title" data-astro-cid-qulgs7oj>Siti greenblu</h1></div><!-- Pannello dei Filtri Interattivi --><div class="filter-panel" data-astro-cid-qulgs7oj><div class="filter-group" data-astro-cid-qulgs7oj><span class="filter-label" data-astro-cid-qulgs7oj>Dispositivo:</span><div class="toggle-buttons" data-astro-cid-qulgs7oj><button class="toggle-btn active" data-device="phone" data-astro-cid-qulgs7oj>📱 Phone</button><button class="toggle-btn" data-device="desktop" data-astro-cid-qulgs7oj>💻 Desktop</button></div></div><div class="filter-group" data-astro-cid-qulgs7oj><span class="filter-label" data-astro-cid-qulgs7oj>Analisi:</span><div class="toggle-buttons" data-astro-cid-qulgs7oj><button class="toggle-btn active" data-scope="origin" data-astro-cid-qulgs7oj>📊 Intero Sito</button><button class="toggle-btn" data-scope="url" data-astro-cid-qulgs7oj>🏠 Home Page</button></div></div></div><!-- Sezioni Dati --><div class="views-container" data-astro-cid-qulgs7oj><div class="view-content active" id="view-phone-origin" data-astro-cid-qulgs7oj><h2 data-astro-cid-qulgs7oj>Report: Phone / Intero Sito</h2><pre class="data-box" data-astro-cid-qulgs7oj>{
+  &quot;params&quot;: {
+    &quot;formFactor&quot;: &quot;PHONE&quot;,
+    &quot;origin&quot;: true,
+    &quot;collectionPeriod&quot;: {
+      &quot;firstDate&quot;: {
+        &quot;year&quot;: 2026,
+        &quot;month&quot;: 8,
+        &quot;day&quot;: 23
+      },
+      &quot;lastDate&quot;: {
+        &quot;year&quot;: 2026,
+        &quot;month&quot;: 9,
+        &quot;day&quot;: 19
+      }
+    },
+    &quot;date&quot;: &quot;21.09.2026&quot;
+  },
+  &quot;metrics&quot;: [
+    {
+      &quot;url&quot;: &quot;www.torrecintola.it&quot;,
+      &quot;CLS&quot;: {
+        &quot;histogram&quot;: [
+          97.37,
+          2.41,
+          0.21
+        ],
+        &quot;p75&quot;: &quot;0.05&quot;,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;FCP&quot;: {
+        &quot;histogram&quot;: [
+          82.06,
+          10.46,
+          7.48
+        ],
+        &quot;p75&quot;: 1380,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;LCP&quot;: {
+        &quot;histogram&quot;: [
+          57.21,
+          19.86,
+          22.93
+        ],
+        &quot;p75&quot;: 3840,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;TTFB&quot;: {
+        &quot;histogram&quot;: [
+          80.29,
+          10.43,
+          9.28
+        ],
+        &quot;p75&quot;: 620,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;INP&quot;: {
+        &quot;histogram&quot;: [
+          78.54,
+          18.14,
+          3.32
+        ],
+        &quot;p75&quot;: 177,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;RTT&quot;: {
+        &quot;histogram&quot;: [
+          35.66,
+          55.71,
+          8.63
+        ],
+        &quot;p75&quot;: 137,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;minimalGood&quot;: 57.21
+    },
+    {
+      &quot;url&quot;: &quot;torreguacetohotel.it&quot;,
+      &quot;CLS&quot;: {
+        &quot;histogram&quot;: [
+          97.26,
+          2,
+          0.75
+        ],
+        &quot;p75&quot;: &quot;0.05&quot;,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;FCP&quot;: {
+        &quot;histogram&quot;: [
+          80.67,
+          10.64,
+          8.69
+        ],
+        &quot;p75&quot;: 1519,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;LCP&quot;: {
+        &quot;histogram&quot;: [
+          56.55,
+          21.85,
+          21.6
+        ],
+        &quot;p75&quot;: 3738,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;TTFB&quot;: {
+        &quot;histogram&quot;: [
+          76.62,
+          12.19,
+          11.19
+        ],
+        &quot;p75&quot;: 723,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;INP&quot;: {
+        &quot;histogram&quot;: [
+          79.08,
+          17.3,
+          3.62
+        ],
+        &quot;p75&quot;: 182,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;RTT&quot;: {
+        &quot;histogram&quot;: [
+          25.37,
+          63.97,
+          10.66
+        ],
+        &quot;p75&quot;: 177,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;minimalGood&quot;: 56.55
+    },
+    {
+      &quot;url&quot;: &quot;www.hotelmarinagri.it&quot;,
+      &quot;CLS&quot;: {
+        &quot;histogram&quot;: [
+          97.07,
+          2.56,
+          0.37
+        ],
+        &quot;p75&quot;: &quot;0.05&quot;,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;FCP&quot;: {
+        &quot;histogram&quot;: [
+          80.29,
+          9.23,
+          10.48
+        ],
+        &quot;p75&quot;: 1524,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;LCP&quot;: {
+        &quot;histogram&quot;: [
+          52.57,
+          22.6,
+          24.83
+        ],
+        &quot;p75&quot;: 3996,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;TTFB&quot;: {
+        &quot;histogram&quot;: [
+          79.46,
+          8.65,
+          11.88
+        ],
+        &quot;p75&quot;: 600,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;INP&quot;: {
+        &quot;histogram&quot;: [
+          79.06,
+          17.7,
+          3.24
+        ],
+        &quot;p75&quot;: 177,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;RTT&quot;: {
+        &quot;histogram&quot;: [
+          23.33,
+          68.85,
+          7.82
+        ],
+        &quot;p75&quot;: 153,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;minimalGood&quot;: 52.57
+    },
+    {
+      &quot;url&quot;: &quot;argonautihotel.it&quot;,
+      &quot;CLS&quot;: {
+        &quot;histogram&quot;: [
+          97.41,
+          1.99,
+          0.59
+        ],
+        &quot;p75&quot;: &quot;0.05&quot;,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;FCP&quot;: {
+        &quot;histogram&quot;: [
+          66.52,
+          10.59,
+          22.89
+        ],
+        &quot;p75&quot;: 2669,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;LCP&quot;: {
+        &quot;histogram&quot;: [
+          48.11,
+          17.44,
+          34.44
+        ],
+        &quot;p75&quot;: 5216,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;TTFB&quot;: {
+        &quot;histogram&quot;: [
+          65.46,
+          7.68,
+          26.86
+        ],
+        &quot;p75&quot;: 2119,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;INP&quot;: {
+        &quot;histogram&quot;: [
+          76.15,
+          20.27,
+          3.58
+        ],
+        &quot;p75&quot;: 194,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;RTT&quot;: {
+        &quot;histogram&quot;: [
+          22.76,
+          67.81,
+          9.43
+        ],
+        &quot;p75&quot;: 159,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;minimalGood&quot;: 48.11
+    },
+    {
+      &quot;url&quot;: &quot;tichos-hotel.it&quot;,
+      &quot;CLS&quot;: {
+        &quot;histogram&quot;: [
+          96.75,
+          2.94,
+          0.31
+        ],
+        &quot;p75&quot;: &quot;0.04&quot;,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;FCP&quot;: {
+        &quot;histogram&quot;: [
+          61.39,
+          12.08,
+          26.54
+        ],
+        &quot;p75&quot;: 3242,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;LCP&quot;: {
+        &quot;histogram&quot;: [
+          46.08,
+          15.4,
+          38.52
+        ],
+        &quot;p75&quot;: 5811,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;TTFB&quot;: {
+        &quot;histogram&quot;: [
+          58.02,
+          11.09,
+          30.89
+        ],
+        &quot;p75&quot;: 2725,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;INP&quot;: {
+        &quot;histogram&quot;: [
+          72.65,
+          23.52,
+          3.83
+        ],
+        &quot;p75&quot;: 214,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;RTT&quot;: {
+        &quot;histogram&quot;: [
+          24.36,
+          66.25,
+          9.4
+        ],
+        &quot;p75&quot;: 153,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;minimalGood&quot;: 46.08
+    },
+    {
+      &quot;url&quot;: &quot;falconaragreenblu.com&quot;,
+      &quot;CLS&quot;: {
+        &quot;histogram&quot;: [
+          97.87,
+          1.99,
+          0.14
+        ],
+        &quot;p75&quot;: &quot;0.05&quot;,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;FCP&quot;: {
+        &quot;histogram&quot;: [
+          64.2,
+          11.03,
+          24.76
+        ],
+        &quot;p75&quot;: 2973,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;LCP&quot;: {
+        &quot;histogram&quot;: [
+          45.48,
+          17.13,
+          37.39
+        ],
+        &quot;p75&quot;: 5428,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;TTFB&quot;: {
+        &quot;histogram&quot;: [],
+        &quot;p75&quot;: &quot;-&quot;,
+        &quot;rank&quot;: &quot;-&quot;
+      },
+      &quot;INP&quot;: {
+        &quot;histogram&quot;: [
+          80.04,
+          18.94,
+          1.03
+        ],
+        &quot;p75&quot;: 167,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;RTT&quot;: {
+        &quot;histogram&quot;: [
+          18.85,
+          68.45,
+          12.7
+        ],
+        &quot;p75&quot;: 192,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;minimalGood&quot;: 45.48
+    },
+    {
+      &quot;url&quot;: &quot;www.hotelpresidentlecce.it&quot;,
+      &quot;CLS&quot;: {
+        &quot;histogram&quot;: [
+          96.23,
+          3.03,
+          0.74
+        ],
+        &quot;p75&quot;: &quot;0.06&quot;,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;FCP&quot;: {
+        &quot;histogram&quot;: [
+          41.2,
+          14.01,
+          44.78
+        ],
+        &quot;p75&quot;: 5830,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;LCP&quot;: {
+        &quot;histogram&quot;: [
+          43.9,
+          12.85,
+          43.25
+        ],
+        &quot;p75&quot;: 6789,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;TTFB&quot;: {
+        &quot;histogram&quot;: [
+          28.48,
+          12.08,
+          59.45
+        ],
+        &quot;p75&quot;: 5295,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;INP&quot;: {
+        &quot;histogram&quot;: [
+          78.01,
+          17.39,
+          4.6
+        ],
+        &quot;p75&quot;: 179,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;RTT&quot;: {
+        &quot;histogram&quot;: [
+          27.19,
+          63.66,
+          9.14
+        ],
+        &quot;p75&quot;: 145,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;minimalGood&quot;: 43.9
+    },
+    {
+      &quot;url&quot;: &quot;biancodonda.com&quot;,
+      &quot;CLS&quot;: {
+        &quot;histogram&quot;: [
+          91.9,
+          1.14,
+          6.96
+        ],
+        &quot;p75&quot;: &quot;0.00&quot;,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;FCP&quot;: {
+        &quot;histogram&quot;: [
+          32.2,
+          14.01,
+          53.79
+        ],
+        &quot;p75&quot;: 6684,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;LCP&quot;: {
+        &quot;histogram&quot;: [
+          36.01,
+          17.29,
+          46.7
+        ],
+        &quot;p75&quot;: 7494,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;TTFB&quot;: {
+        &quot;histogram&quot;: [
+          27.65,
+          3.24,
+          69.12
+        ],
+        &quot;p75&quot;: 6064,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;INP&quot;: {
+        &quot;histogram&quot;: [
+          88.11,
+          9.17,
+          2.73
+        ],
+        &quot;p75&quot;: 141,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;RTT&quot;: {
+        &quot;histogram&quot;: [
+          31.09,
+          62.28,
+          6.63
+        ],
+        &quot;p75&quot;: 135,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;minimalGood&quot;: 36.01
+    },
+    {
+      &quot;url&quot;: &quot;armonhotel.com&quot;,
+      &quot;CLS&quot;: {
+        &quot;histogram&quot;: [
+          99.34,
+          0.47,
+          0.19
+        ],
+        &quot;p75&quot;: &quot;0.03&quot;,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;FCP&quot;: {
+        &quot;histogram&quot;: [
+          22.72,
+          24.19,
+          53.1
+        ],
+        &quot;p75&quot;: 5771,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;LCP&quot;: {
+        &quot;histogram&quot;: [
+          26.1,
+          26.31,
+          47.59
+        ],
+        &quot;p75&quot;: 6713,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;TTFB&quot;: {
+        &quot;histogram&quot;: [
+          13.6,
+          3.04,
+          83.36
+        ],
+        &quot;p75&quot;: 5239,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;INP&quot;: {
+        &quot;histogram&quot;: [
+          84.31,
+          14.77,
+          0.92
+        ],
+        &quot;p75&quot;: 159,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;RTT&quot;: {
+        &quot;histogram&quot;: [
+          33.41,
+          59.44,
+          7.16
+        ],
+        &quot;p75&quot;: 138,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;minimalGood&quot;: 26.1
+    },
+    {
+      &quot;url&quot;: &quot;movenpickhotelbari.it&quot;,
+      &quot;CLS&quot;: {
+        &quot;histogram&quot;: [
+          98.07,
+          0.63,
+          1.3
+        ],
+        &quot;p75&quot;: &quot;0.00&quot;,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;FCP&quot;: {
+        &quot;histogram&quot;: [
+          16.63,
+          11.7,
+          71.67
+        ],
+        &quot;p75&quot;: 7404,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;LCP&quot;: {
+        &quot;histogram&quot;: [
+          18.22,
+          13.49,
+          68.29
+        ],
+        &quot;p75&quot;: 8880,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;TTFB&quot;: {
+        &quot;histogram&quot;: [
+          6.37,
+          1.18,
+          92.45
+        ],
+        &quot;p75&quot;: 6505,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;INP&quot;: {
+        &quot;histogram&quot;: [
+          74.34,
+          23.49,
+          2.16
+        ],
+        &quot;p75&quot;: 203,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;RTT&quot;: {
+        &quot;histogram&quot;: [
+          31.78,
+          61.35,
+          6.87
+        ],
+        &quot;p75&quot;: 136,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;minimalGood&quot;: 18.22
+    },
+    {
+      &quot;url&quot;: &quot;www.greenblu.it&quot;,
+      &quot;CLS&quot;: {
+        &quot;histogram&quot;: [
+          97.19,
+          1.01,
+          1.8
+        ],
+        &quot;p75&quot;: &quot;0.00&quot;,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;FCP&quot;: {
+        &quot;histogram&quot;: [
+          12.46,
+          8.24,
+          79.3
+        ],
+        &quot;p75&quot;: 6488,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;LCP&quot;: {
+        &quot;histogram&quot;: [
+          13.23,
+          22.29,
+          64.49
+        ],
+        &quot;p75&quot;: 7621,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;TTFB&quot;: {
+        &quot;histogram&quot;: [
+          4.4,
+          0.42,
+          95.19
+        ],
+        &quot;p75&quot;: 5719,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;INP&quot;: {
+        &quot;histogram&quot;: [
+          80.14,
+          17.17,
+          2.68
+        ],
+        &quot;p75&quot;: 167,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;RTT&quot;: {
+        &quot;histogram&quot;: [
+          24.67,
+          66.46,
+          8.87
+        ],
+        &quot;p75&quot;: 154,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;minimalGood&quot;: 13.23
+    },
+    {
+      &quot;url&quot;: &quot;borgobianco.it&quot;,
+      &quot;CLS&quot;: {
+        &quot;histogram&quot;: [
+          99.13,
+          0.48,
+          0.39
+        ],
+        &quot;p75&quot;: &quot;0.00&quot;,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;FCP&quot;: {
+        &quot;histogram&quot;: [
+          9.6,
+          12.31,
+          78.09
+        ],
+        &quot;p75&quot;: 7032,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;LCP&quot;: {
+        &quot;histogram&quot;: [
+          11.94,
+          10.44,
+          77.62
+        ],
+        &quot;p75&quot;: 8820,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;TTFB&quot;: {
+        &quot;histogram&quot;: [
+          3.94,
+          1.31,
+          94.75
+        ],
+        &quot;p75&quot;: 6181,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;INP&quot;: {
+        &quot;histogram&quot;: [
+          75.76,
+          21.51,
+          2.74
+        ],
+        &quot;p75&quot;: 195,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;RTT&quot;: {
+        &quot;histogram&quot;: [
+          30.14,
+          59.82,
+          10.04
+        ],
+        &quot;p75&quot;: 149,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;minimalGood&quot;: 11.94
+    }
+  ]
+}</pre></div><div class="view-content" id="view-phone-url" data-astro-cid-qulgs7oj><h2 data-astro-cid-qulgs7oj>Report: Phone / Home Page</h2><pre class="data-box" data-astro-cid-qulgs7oj>{
+  &quot;params&quot;: {
+    &quot;formFactor&quot;: &quot;PHONE&quot;,
+    &quot;url&quot;: true,
+    &quot;collectionPeriod&quot;: {
+      &quot;firstDate&quot;: {
+        &quot;year&quot;: 2026,
+        &quot;month&quot;: 8,
+        &quot;day&quot;: 23
+      },
+      &quot;lastDate&quot;: {
+        &quot;year&quot;: 2026,
+        &quot;month&quot;: 9,
+        &quot;day&quot;: 19
+      }
+    },
+    &quot;date&quot;: &quot;21.09.2026&quot;
+  },
+  &quot;metrics&quot;: [
+    {
+      &quot;url&quot;: &quot;www.hotelpresidentlecce.it/&quot;,
+      &quot;CLS&quot;: {
+        &quot;histogram&quot;: [
+          96.58,
+          2.23,
+          1.19
+        ],
+        &quot;p75&quot;: &quot;0.06&quot;,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;FCP&quot;: {
+        &quot;histogram&quot;: [
+          49.59,
+          7.91,
+          42.5
+        ],
+        &quot;p75&quot;: 6372,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;LCP&quot;: {
+        &quot;histogram&quot;: [
+          50.57,
+          6.97,
+          42.46
+        ],
+        &quot;p75&quot;: 7553,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;TTFB&quot;: {
+        &quot;histogram&quot;: [
+          36.78,
+          11.15,
+          52.07
+        ],
+        &quot;p75&quot;: 6208,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;INP&quot;: {
+        &quot;histogram&quot;: [
+          72.89,
+          22.1,
+          5.01
+        ],
+        &quot;p75&quot;: 210,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;RTT&quot;: {
+        &quot;histogram&quot;: [
+          30.5,
+          61.14,
+          8.36
+        ],
+        &quot;p75&quot;: 141,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;minimalGood&quot;: 50.57
+    },
+    {
+      &quot;url&quot;: &quot;torreguacetohotel.it/&quot;,
+      &quot;CLS&quot;: {
+        &quot;histogram&quot;: [
+          99.01,
+          0.47,
+          0.52
+        ],
+        &quot;p75&quot;: &quot;0.06&quot;,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;FCP&quot;: {
+        &quot;histogram&quot;: [
+          81.83,
+          9.06,
+          9.12
+        ],
+        &quot;p75&quot;: 1527,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;LCP&quot;: {
+        &quot;histogram&quot;: [
+          39.31,
+          28.37,
+          32.32
+        ],
+        &quot;p75&quot;: 4440,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;TTFB&quot;: {
+        &quot;histogram&quot;: [
+          83.14,
+          9.54,
+          7.32
+        ],
+        &quot;p75&quot;: 574,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;INP&quot;: {
+        &quot;histogram&quot;: [
+          73.21,
+          22.67,
+          4.12
+        ],
+        &quot;p75&quot;: 211,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;RTT&quot;: {
+        &quot;histogram&quot;: [
+          27.29,
+          61.84,
+          10.86
+        ],
+        &quot;p75&quot;: 151,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;minimalGood&quot;: 39.31
+    },
+    {
+      &quot;url&quot;: &quot;www.torrecintola.it/&quot;,
+      &quot;CLS&quot;: {
+        &quot;histogram&quot;: [
+          98.42,
+          1.37,
+          0.21
+        ],
+        &quot;p75&quot;: &quot;0.06&quot;,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;FCP&quot;: {
+        &quot;histogram&quot;: [
+          83.5,
+          9.41,
+          7.09
+        ],
+        &quot;p75&quot;: 1414,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;LCP&quot;: {
+        &quot;histogram&quot;: [
+          38.05,
+          28.8,
+          33.15
+        ],
+        &quot;p75&quot;: 4455,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;TTFB&quot;: {
+        &quot;histogram&quot;: [
+          84.66,
+          9.77,
+          5.56
+        ],
+        &quot;p75&quot;: 569,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;INP&quot;: {
+        &quot;histogram&quot;: [
+          71.35,
+          24.28,
+          4.37
+        ],
+        &quot;p75&quot;: 221,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;RTT&quot;: {
+        &quot;histogram&quot;: [
+          32.89,
+          59.14,
+          7.97
+        ],
+        &quot;p75&quot;: 140,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;minimalGood&quot;: 38.05
+    },
+    {
+      &quot;url&quot;: &quot;www.hotelmarinagri.it/&quot;,
+      &quot;CLS&quot;: {
+        &quot;histogram&quot;: [
+          99.4,
+          0.51,
+          0.09
+        ],
+        &quot;p75&quot;: &quot;0.06&quot;,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;FCP&quot;: {
+        &quot;histogram&quot;: [
+          79.22,
+          10.67,
+          10.11
+        ],
+        &quot;p75&quot;: 1618,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;LCP&quot;: {
+        &quot;histogram&quot;: [
+          37.18,
+          30.9,
+          31.93
+        ],
+        &quot;p75&quot;: 4463,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;TTFB&quot;: {
+        &quot;histogram&quot;: [
+          81.4,
+          10.41,
+          8.19
+        ],
+        &quot;p75&quot;: 597,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;INP&quot;: {
+        &quot;histogram&quot;: [
+          75.02,
+          20.81,
+          4.17
+        ],
+        &quot;p75&quot;: 201,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;RTT&quot;: {
+        &quot;histogram&quot;: [
+          22,
+          69.95,
+          8.06
+        ],
+        &quot;p75&quot;: 155,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;minimalGood&quot;: 37.18
+    },
+    {
+      &quot;url&quot;: &quot;argonautihotel.it/&quot;,
+      &quot;CLS&quot;: {
+        &quot;histogram&quot;: [
+          98.34,
+          0.93,
+          0.73
+        ],
+        &quot;p75&quot;: &quot;0.05&quot;,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;FCP&quot;: {
+        &quot;histogram&quot;: [
+          58.26,
+          11.09,
+          30.65
+        ],
+        &quot;p75&quot;: 3895,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;LCP&quot;: {
+        &quot;histogram&quot;: [
+          30.08,
+          21.73,
+          48.2
+        ],
+        &quot;p75&quot;: 7290,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;TTFB&quot;: {
+        &quot;histogram&quot;: [
+          58.83,
+          8.44,
+          32.73
+        ],
+        &quot;p75&quot;: 3449,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;INP&quot;: {
+        &quot;histogram&quot;: [
+          71.8,
+          23.82,
+          4.38
+        ],
+        &quot;p75&quot;: 213,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;RTT&quot;: {
+        &quot;histogram&quot;: [
+          24.33,
+          65.72,
+          9.95
+        ],
+        &quot;p75&quot;: 153,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;minimalGood&quot;: 30.08
+    },
+    {
+      &quot;url&quot;: &quot;tichos-hotel.it/&quot;,
+      &quot;CLS&quot;: {
+        &quot;histogram&quot;: [
+          98.47,
+          1.53,
+          0
+        ],
+        &quot;p75&quot;: &quot;0.05&quot;,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;FCP&quot;: {
+        &quot;histogram&quot;: [
+          51.04,
+          13.07,
+          35.89
+        ],
+        &quot;p75&quot;: 5459,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;LCP&quot;: {
+        &quot;histogram&quot;: [
+          25.67,
+          16.95,
+          57.38
+        ],
+        &quot;p75&quot;: 7629,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;TTFB&quot;: {
+        &quot;histogram&quot;: [
+          49.25,
+          12.05,
+          38.7
+        ],
+        &quot;p75&quot;: 4933,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;INP&quot;: {
+        &quot;histogram&quot;: [
+          62.89,
+          31.15,
+          5.97
+        ],
+        &quot;p75&quot;: 252,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;RTT&quot;: {
+        &quot;histogram&quot;: [
+          26.11,
+          64.72,
+          9.17
+        ],
+        &quot;p75&quot;: 136,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;minimalGood&quot;: 25.67
+    },
+    {
+      &quot;url&quot;: &quot;biancodonda.com/&quot;,
+      &quot;CLS&quot;: {
+        &quot;histogram&quot;: [
+          91.15,
+          1.24,
+          7.61
+        ],
+        &quot;p75&quot;: &quot;0.00&quot;,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;FCP&quot;: {
+        &quot;histogram&quot;: [
+          17.35,
+          16.62,
+          66.02
+        ],
+        &quot;p75&quot;: 7166,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;LCP&quot;: {
+        &quot;histogram&quot;: [
+          20.6,
+          20.37,
+          59.03
+        ],
+        &quot;p75&quot;: 8071,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;TTFB&quot;: {
+        &quot;histogram&quot;: [
+          12.62,
+          2.77,
+          84.61
+        ],
+        &quot;p75&quot;: 6453,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;INP&quot;: {
+        &quot;histogram&quot;: [
+          89.16,
+          8.4,
+          2.44
+        ],
+        &quot;p75&quot;: 134,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;RTT&quot;: {
+        &quot;histogram&quot;: [
+          30.83,
+          62.04,
+          7.13
+        ],
+        &quot;p75&quot;: 135,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;minimalGood&quot;: 20.6
+    },
+    {
+      &quot;url&quot;: &quot;armonhotel.com/&quot;,
+      &quot;CLS&quot;: {
+        &quot;histogram&quot;: [
+          98.87,
+          0.39,
+          0.74
+        ],
+        &quot;p75&quot;: &quot;0.04&quot;,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;FCP&quot;: {
+        &quot;histogram&quot;: [
+          21.11,
+          12.36,
+          66.53
+        ],
+        &quot;p75&quot;: 6739,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;LCP&quot;: {
+        &quot;histogram&quot;: [
+          20.5,
+          11.03,
+          68.47
+        ],
+        &quot;p75&quot;: 9746,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;TTFB&quot;: {
+        &quot;histogram&quot;: [],
+        &quot;p75&quot;: &quot;-&quot;,
+        &quot;rank&quot;: &quot;-&quot;
+      },
+      &quot;INP&quot;: {
+        &quot;histogram&quot;: [
+          86.49,
+          12.4,
+          1.11
+        ],
+        &quot;p75&quot;: 152,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;RTT&quot;: {
+        &quot;histogram&quot;: [
+          27.42,
+          65.56,
+          7.02
+        ],
+        &quot;p75&quot;: 144,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;minimalGood&quot;: 20.5
+    },
+    {
+      &quot;url&quot;: &quot;movenpickhotelbari.it/&quot;,
+      &quot;CLS&quot;: {
+        &quot;histogram&quot;: [
+          98.79,
+          0.29,
+          0.91
+        ],
+        &quot;p75&quot;: &quot;0.00&quot;,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;FCP&quot;: {
+        &quot;histogram&quot;: [
+          16.57,
+          4.84,
+          78.58
+        ],
+        &quot;p75&quot;: 7866,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;LCP&quot;: {
+        &quot;histogram&quot;: [
+          15.54,
+          6.4,
+          78.07
+        ],
+        &quot;p75&quot;: 9558,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;TTFB&quot;: {
+        &quot;histogram&quot;: [
+          6.8,
+          0.68,
+          92.52
+        ],
+        &quot;p75&quot;: 6815,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;INP&quot;: {
+        &quot;histogram&quot;: [
+          69.66,
+          27.22,
+          3.13
+        ],
+        &quot;p75&quot;: 217,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;RTT&quot;: {
+        &quot;histogram&quot;: [
+          30.48,
+          62.54,
+          6.98
+        ],
+        &quot;p75&quot;: 131,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;minimalGood&quot;: 15.54
+    },
+    {
+      &quot;url&quot;: &quot;www.greenblu.it/&quot;,
+      &quot;CLS&quot;: {
+        &quot;histogram&quot;: [
+          98.56,
+          1.05,
+          0.39
+        ],
+        &quot;p75&quot;: &quot;0.00&quot;,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;FCP&quot;: {
+        &quot;histogram&quot;: [
+          9.81,
+          0.34,
+          89.85
+        ],
+        &quot;p75&quot;: 8379,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;LCP&quot;: {
+        &quot;histogram&quot;: [
+          8.94,
+          1.51,
+          89.55
+        ],
+        &quot;p75&quot;: 10200,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;TTFB&quot;: {
+        &quot;histogram&quot;: [
+          4.31,
+          0,
+          95.69
+        ],
+        &quot;p75&quot;: 7642,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;INP&quot;: {
+        &quot;histogram&quot;: [
+          68.62,
+          26.71,
+          4.67
+        ],
+        &quot;p75&quot;: 248,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;RTT&quot;: {
+        &quot;histogram&quot;: [
+          26.2,
+          64.15,
+          9.65
+        ],
+        &quot;p75&quot;: 149,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;minimalGood&quot;: 8.94
+    },
+    {
+      &quot;url&quot;: &quot;borgobianco.it/&quot;,
+      &quot;CLS&quot;: {
+        &quot;histogram&quot;: [
+          99.84,
+          0.16,
+          0
+        ],
+        &quot;p75&quot;: &quot;0.00&quot;,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;FCP&quot;: {
+        &quot;histogram&quot;: [
+          5.8,
+          7.3,
+          86.89
+        ],
+        &quot;p75&quot;: 7269,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;LCP&quot;: {
+        &quot;histogram&quot;: [
+          5.7,
+          7.3,
+          87
+        ],
+        &quot;p75&quot;: 9239,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;TTFB&quot;: {
+        &quot;histogram&quot;: [
+          3.02,
+          0.25,
+          96.72
+        ],
+        &quot;p75&quot;: 6278,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;INP&quot;: {
+        &quot;histogram&quot;: [
+          74.4,
+          23.09,
+          2.51
+        ],
+        &quot;p75&quot;: 203,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;RTT&quot;: {
+        &quot;histogram&quot;: [
+          28.98,
+          60.74,
+          10.28
+        ],
+        &quot;p75&quot;: 145,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;minimalGood&quot;: 5.7
+    }
+  ]
+}</pre></div><div class="view-content" id="view-desktop-origin" data-astro-cid-qulgs7oj><h2 data-astro-cid-qulgs7oj>Report: Desktop / Intero Sito</h2><pre class="data-box" data-astro-cid-qulgs7oj>{
+  &quot;params&quot;: {
+    &quot;formFactor&quot;: &quot;DESKTOP&quot;,
+    &quot;origin&quot;: true,
+    &quot;collectionPeriod&quot;: {
+      &quot;firstDate&quot;: {
+        &quot;year&quot;: 2026,
+        &quot;month&quot;: 8,
+        &quot;day&quot;: 23
+      },
+      &quot;lastDate&quot;: {
+        &quot;year&quot;: 2026,
+        &quot;month&quot;: 9,
+        &quot;day&quot;: 19
+      }
+    },
+    &quot;date&quot;: &quot;21.09.2026&quot;
+  },
+  &quot;metrics&quot;: [
+    {
+      &quot;url&quot;: &quot;www.hotelmarinagri.it&quot;,
+      &quot;CLS&quot;: {
+        &quot;histogram&quot;: [
+          100,
+          0,
+          0
+        ],
+        &quot;p75&quot;: &quot;0.02&quot;,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;FCP&quot;: {
+        &quot;histogram&quot;: [
+          84.24,
+          7.63,
+          8.13
+        ],
+        &quot;p75&quot;: 951,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;LCP&quot;: {
+        &quot;histogram&quot;: [
+          79.55,
+          10.57,
+          9.89
+        ],
+        &quot;p75&quot;: 2056,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;TTFB&quot;: {
+        &quot;histogram&quot;: [
+          81.04,
+          5.94,
+          13.03
+        ],
+        &quot;p75&quot;: 389,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;INP&quot;: {
+        &quot;histogram&quot;: [
+          97.05,
+          0.84,
+          2.1
+        ],
+        &quot;p75&quot;: 60,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;RTT&quot;: {
+        &quot;histogram&quot;: [
+          68.85,
+          29.8,
+          1.34
+        ],
+        &quot;p75&quot;: 79,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;minimalGood&quot;: 79.55
+    },
+    {
+      &quot;url&quot;: &quot;www.torrecintola.it&quot;,
+      &quot;CLS&quot;: {
+        &quot;histogram&quot;: [
+          99.42,
+          0.45,
+          0.12
+        ],
+        &quot;p75&quot;: &quot;0.02&quot;,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;FCP&quot;: {
+        &quot;histogram&quot;: [
+          86.08,
+          7.73,
+          6.19
+        ],
+        &quot;p75&quot;: 1068,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;LCP&quot;: {
+        &quot;histogram&quot;: [
+          79.32,
+          12.17,
+          8.5
+        ],
+        &quot;p75&quot;: 2155,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;TTFB&quot;: {
+        &quot;histogram&quot;: [
+          77.71,
+          11.81,
+          10.49
+        ],
+        &quot;p75&quot;: 656,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;INP&quot;: {
+        &quot;histogram&quot;: [
+          96.31,
+          2.51,
+          1.18
+        ],
+        &quot;p75&quot;: 65,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;RTT&quot;: {
+        &quot;histogram&quot;: [
+          70.72,
+          27.87,
+          1.41
+        ],
+        &quot;p75&quot;: 78,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;minimalGood&quot;: 79.32
+    },
+    {
+      &quot;url&quot;: &quot;borgobianco.it&quot;,
+      &quot;CLS&quot;: {
+        &quot;histogram&quot;: [
+          99.63,
+          0,
+          0.37
+        ],
+        &quot;p75&quot;: &quot;0.02&quot;,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;FCP&quot;: {
+        &quot;histogram&quot;: [
+          84.34,
+          10.44,
+          5.22
+        ],
+        &quot;p75&quot;: 1280,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;LCP&quot;: {
+        &quot;histogram&quot;: [
+          77.03,
+          12.16,
+          10.81
+        ],
+        &quot;p75&quot;: 2416,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;TTFB&quot;: {
+        &quot;histogram&quot;: [
+          78.95,
+          11.7,
+          9.36
+        ],
+        &quot;p75&quot;: 695,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;INP&quot;: {
+        &quot;histogram&quot;: [
+          97.83,
+          2.17,
+          0
+        ],
+        &quot;p75&quot;: 63,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;RTT&quot;: {
+        &quot;histogram&quot;: [
+          54.7,
+          41.46,
+          3.84
+        ],
+        &quot;p75&quot;: 99,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;minimalGood&quot;: 77.03
+    },
+    {
+      &quot;url&quot;: &quot;torreguacetohotel.it&quot;,
+      &quot;CLS&quot;: {
+        &quot;histogram&quot;: [
+          99.64,
+          0.36,
+          0
+        ],
+        &quot;p75&quot;: &quot;0.02&quot;,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;FCP&quot;: {
+        &quot;histogram&quot;: [
+          79.49,
+          9.79,
+          10.72
+        ],
+        &quot;p75&quot;: 1573,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;LCP&quot;: {
+        &quot;histogram&quot;: [
+          74.47,
+          10.57,
+          14.96
+        ],
+        &quot;p75&quot;: 2478,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;TTFB&quot;: {
+        &quot;histogram&quot;: [
+          64.92,
+          13.76,
+          21.32
+        ],
+        &quot;p75&quot;: 1595,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;INP&quot;: {
+        &quot;histogram&quot;: [
+          98.54,
+          1.46,
+          0
+        ],
+        &quot;p75&quot;: 61,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;RTT&quot;: {
+        &quot;histogram&quot;: [
+          73.4,
+          25.89,
+          0.71
+        ],
+        &quot;p75&quot;: 78,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;minimalGood&quot;: 74.47
+    },
+    {
+      &quot;url&quot;: &quot;armonhotel.com&quot;,
+      &quot;CLS&quot;: {
+        &quot;histogram&quot;: [
+          99.38,
+          0.31,
+          0.31
+        ],
+        &quot;p75&quot;: &quot;0.02&quot;,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;FCP&quot;: {
+        &quot;histogram&quot;: [
+          79.49,
+          8.02,
+          12.49
+        ],
+        &quot;p75&quot;: 1259,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;LCP&quot;: {
+        &quot;histogram&quot;: [
+          73.65,
+          12.29,
+          14.06
+        ],
+        &quot;p75&quot;: 2586,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;TTFB&quot;: {
+        &quot;histogram&quot;: [
+          72.81,
+          5.08,
+          22.11
+        ],
+        &quot;p75&quot;: 1204,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;INP&quot;: {
+        &quot;histogram&quot;: [
+          95.99,
+          2.41,
+          1.6
+        ],
+        &quot;p75&quot;: 65,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;RTT&quot;: {
+        &quot;histogram&quot;: [
+          70.18,
+          29.17,
+          0.65
+        ],
+        &quot;p75&quot;: 81,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;minimalGood&quot;: 73.65
+    },
+    {
+      &quot;url&quot;: &quot;argonautihotel.it&quot;,
+      &quot;CLS&quot;: {
+        &quot;histogram&quot;: [
+          98.81,
+          0.87,
+          0.32
+        ],
+        &quot;p75&quot;: &quot;0.02&quot;,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;FCP&quot;: {
+        &quot;histogram&quot;: [
+          79.87,
+          8.13,
+          12
+        ],
+        &quot;p75&quot;: 1411,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;LCP&quot;: {
+        &quot;histogram&quot;: [
+          73.6,
+          13.32,
+          13.08
+        ],
+        &quot;p75&quot;: 2638,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;TTFB&quot;: {
+        &quot;histogram&quot;: [
+          71.12,
+          7.85,
+          21.03
+        ],
+        &quot;p75&quot;: 1207,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;INP&quot;: {
+        &quot;histogram&quot;: [
+          96.55,
+          2.15,
+          1.3
+        ],
+        &quot;p75&quot;: 68,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;RTT&quot;: {
+        &quot;histogram&quot;: [
+          62.49,
+          37.23,
+          0.28
+        ],
+        &quot;p75&quot;: 87,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;minimalGood&quot;: 73.6
+    },
+    {
+      &quot;url&quot;: &quot;tichos-hotel.it&quot;,
+      &quot;CLS&quot;: {
+        &quot;histogram&quot;: [
+          98.72,
+          0.87,
+          0.41
+        ],
+        &quot;p75&quot;: &quot;0.02&quot;,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;FCP&quot;: {
+        &quot;histogram&quot;: [
+          73.67,
+          6.49,
+          19.84
+        ],
+        &quot;p75&quot;: 2104,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;LCP&quot;: {
+        &quot;histogram&quot;: [
+          68,
+          9.48,
+          22.52
+        ],
+        &quot;p75&quot;: 3337,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;TTFB&quot;: {
+        &quot;histogram&quot;: [
+          62.26,
+          12.44,
+          25.3
+        ],
+        &quot;p75&quot;: 1842,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;INP&quot;: {
+        &quot;histogram&quot;: [
+          95.86,
+          2.8,
+          1.34
+        ],
+        &quot;p75&quot;: 65,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;RTT&quot;: {
+        &quot;histogram&quot;: [
+          59.83,
+          39.02,
+          1.15
+        ],
+        &quot;p75&quot;: 87,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;minimalGood&quot;: 68
+    },
+    {
+      &quot;url&quot;: &quot;www.greenblu.it&quot;,
+      &quot;CLS&quot;: {
+        &quot;histogram&quot;: [
+          96.49,
+          2.48,
+          1.03
+        ],
+        &quot;p75&quot;: &quot;0.02&quot;,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;FCP&quot;: {
+        &quot;histogram&quot;: [
+          76.88,
+          8.34,
+          14.78
+        ],
+        &quot;p75&quot;: 1655,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;LCP&quot;: {
+        &quot;histogram&quot;: [
+          65.69,
+          16.91,
+          17.4
+        ],
+        &quot;p75&quot;: 3179,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;TTFB&quot;: {
+        &quot;histogram&quot;: [
+          75.36,
+          5.83,
+          18.81
+        ],
+        &quot;p75&quot;: 769,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;INP&quot;: {
+        &quot;histogram&quot;: [
+          94.66,
+          4.2,
+          1.14
+        ],
+        &quot;p75&quot;: 81,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;RTT&quot;: {
+        &quot;histogram&quot;: [
+          59.15,
+          40,
+          0.85
+        ],
+        &quot;p75&quot;: 92,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;minimalGood&quot;: 65.69
+    },
+    {
+      &quot;url&quot;: &quot;falconaragreenblu.com&quot;,
+      &quot;CLS&quot;: {
+        &quot;histogram&quot;: [
+          99.59,
+          0.41,
+          0
+        ],
+        &quot;p75&quot;: &quot;0.02&quot;,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;FCP&quot;: {
+        &quot;histogram&quot;: [
+          74.34,
+          12.02,
+          13.63
+        ],
+        &quot;p75&quot;: 1999,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;LCP&quot;: {
+        &quot;histogram&quot;: [
+          62.17,
+          16.47,
+          21.36
+        ],
+        &quot;p75&quot;: 3547,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;TTFB&quot;: {
+        &quot;histogram&quot;: [],
+        &quot;p75&quot;: &quot;-&quot;,
+        &quot;rank&quot;: &quot;-&quot;
+      },
+      &quot;INP&quot;: {
+        &quot;histogram&quot;: [
+          95.93,
+          3.4,
+          0.67
+        ],
+        &quot;p75&quot;: 78,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;RTT&quot;: {
+        &quot;histogram&quot;: [
+          42.19,
+          53,
+          4.81
+        ],
+        &quot;p75&quot;: 144,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;minimalGood&quot;: 62.17
+    },
+    {
+      &quot;url&quot;: &quot;www.hotelpresidentlecce.it&quot;,
+      &quot;CLS&quot;: {
+        &quot;histogram&quot;: [
+          89.69,
+          1.24,
+          9.07
+        ],
+        &quot;p75&quot;: &quot;0.02&quot;,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;FCP&quot;: {
+        &quot;histogram&quot;: [
+          61.15,
+          17.29,
+          21.56
+        ],
+        &quot;p75&quot;: 2656,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;LCP&quot;: {
+        &quot;histogram&quot;: [
+          60.47,
+          16.38,
+          23.15
+        ],
+        &quot;p75&quot;: 3673,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;TTFB&quot;: {
+        &quot;histogram&quot;: [
+          48.27,
+          20.83,
+          30.9
+        ],
+        &quot;p75&quot;: 2385,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;INP&quot;: {
+        &quot;histogram&quot;: [
+          95.05,
+          2.47,
+          2.49
+        ],
+        &quot;p75&quot;: 77,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;RTT&quot;: {
+        &quot;histogram&quot;: [
+          67.27,
+          30.87,
+          1.86
+        ],
+        &quot;p75&quot;: 79,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;minimalGood&quot;: 60.47
+    },
+    {
+      &quot;url&quot;: &quot;biancodonda.com&quot;,
+      &quot;CLS&quot;: {
+        &quot;histogram&quot;: [
+          71.5,
+          25.17,
+          3.32
+        ],
+        &quot;p75&quot;: &quot;0.16&quot;,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;FCP&quot;: {
+        &quot;histogram&quot;: [
+          62.21,
+          11.25,
+          26.54
+        ],
+        &quot;p75&quot;: 3265,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;LCP&quot;: {
+        &quot;histogram&quot;: [
+          60.16,
+          15.97,
+          23.87
+        ],
+        &quot;p75&quot;: 3602,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;TTFB&quot;: {
+        &quot;histogram&quot;: [
+          60.49,
+          6.11,
+          33.39
+        ],
+        &quot;p75&quot;: 2558,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;INP&quot;: {
+        &quot;histogram&quot;: [
+          94.12,
+          3.07,
+          2.81
+        ],
+        &quot;p75&quot;: 72,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;RTT&quot;: {
+        &quot;histogram&quot;: [
+          67.7,
+          29.58,
+          2.73
+        ],
+        &quot;p75&quot;: 87,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;minimalGood&quot;: 60.16
+    },
+    {
+      &quot;url&quot;: &quot;movenpickhotelbari.it&quot;,
+      &quot;CLS&quot;: {
+        &quot;histogram&quot;: [
+          98.36,
+          0,
+          1.64
+        ],
+        &quot;p75&quot;: &quot;0.02&quot;,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;FCP&quot;: {
+        &quot;histogram&quot;: [
+          61.58,
+          10.41,
+          28.01
+        ],
+        &quot;p75&quot;: 3309,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;LCP&quot;: {
+        &quot;histogram&quot;: [
+          56.89,
+          13.66,
+          29.45
+        ],
+        &quot;p75&quot;: 5233,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;TTFB&quot;: {
+        &quot;histogram&quot;: [
+          57.12,
+          7.63,
+          35.25
+        ],
+        &quot;p75&quot;: 3001,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;INP&quot;: {
+        &quot;histogram&quot;: [
+          93.66,
+          3.73,
+          2.61
+        ],
+        &quot;p75&quot;: 76,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;RTT&quot;: {
+        &quot;histogram&quot;: [
+          72.35,
+          27.28,
+          0.37
+        ],
+        &quot;p75&quot;: 78,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;minimalGood&quot;: 56.89
+    }
+  ]
+}</pre></div><div class="view-content" id="view-desktop-url" data-astro-cid-qulgs7oj><h2 data-astro-cid-qulgs7oj>Report: Desktop / Home Page</h2><pre class="data-box" data-astro-cid-qulgs7oj>{
+  &quot;params&quot;: {
+    &quot;formFactor&quot;: &quot;DESKTOP&quot;,
+    &quot;url&quot;: true,
+    &quot;collectionPeriod&quot;: {
+      &quot;firstDate&quot;: {
+        &quot;year&quot;: 2026,
+        &quot;month&quot;: 8,
+        &quot;day&quot;: 23
+      },
+      &quot;lastDate&quot;: {
+        &quot;year&quot;: 2026,
+        &quot;month&quot;: 9,
+        &quot;day&quot;: 19
+      }
+    },
+    &quot;date&quot;: &quot;21.09.2026&quot;
+  },
+  &quot;metrics&quot;: [
+    {
+      &quot;url&quot;: &quot;www.torrecintola.it/&quot;,
+      &quot;CLS&quot;: {
+        &quot;histogram&quot;: [
+          99.71,
+          0,
+          0.29
+        ],
+        &quot;p75&quot;: &quot;0.02&quot;,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;FCP&quot;: {
+        &quot;histogram&quot;: [
+          89.95,
+          5.07,
+          4.98
+        ],
+        &quot;p75&quot;: 968,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;LCP&quot;: {
+        &quot;histogram&quot;: [
+          77.72,
+          12.95,
+          9.32
+        ],
+        &quot;p75&quot;: 2394,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;TTFB&quot;: {
+        &quot;histogram&quot;: [
+          85.93,
+          11.43,
+          2.63
+        ],
+        &quot;p75&quot;: 421,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;INP&quot;: {
+        &quot;histogram&quot;: [
+          95.5,
+          3.03,
+          1.47
+        ],
+        &quot;p75&quot;: 70,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;RTT&quot;: {
+        &quot;histogram&quot;: [
+          66.29,
+          31.95,
+          1.76
+        ],
+        &quot;p75&quot;: 82,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;minimalGood&quot;: 77.72
+    },
+    {
+      &quot;url&quot;: &quot;www.hotelmarinagri.it/&quot;,
+      &quot;CLS&quot;: {
+        &quot;histogram&quot;: [
+          100,
+          0,
+          0
+        ],
+        &quot;p75&quot;: &quot;0.02&quot;,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;FCP&quot;: {
+        &quot;histogram&quot;: [
+          88.79,
+          5.52,
+          5.69
+        ],
+        &quot;p75&quot;: 993,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;LCP&quot;: {
+        &quot;histogram&quot;: [
+          75.73,
+          14.18,
+          10.09
+        ],
+        &quot;p75&quot;: 2362,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;TTFB&quot;: {
+        &quot;histogram&quot;: [
+          89.48,
+          6.16,
+          4.36
+        ],
+        &quot;p75&quot;: 330,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;INP&quot;: {
+        &quot;histogram&quot;: [
+          97.63,
+          0.79,
+          1.58
+        ],
+        &quot;p75&quot;: 64,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;RTT&quot;: {
+        &quot;histogram&quot;: [
+          67.91,
+          31.47,
+          0.62
+        ],
+        &quot;p75&quot;: 81,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;minimalGood&quot;: 75.73
+    },
+    {
+      &quot;url&quot;: &quot;armonhotel.com/&quot;,
+      &quot;CLS&quot;: {
+        &quot;histogram&quot;: [
+          100,
+          0,
+          0
+        ],
+        &quot;p75&quot;: &quot;0.02&quot;,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;FCP&quot;: {
+        &quot;histogram&quot;: [
+          92.5,
+          3.19,
+          4.31
+        ],
+        &quot;p75&quot;: 973,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;LCP&quot;: {
+        &quot;histogram&quot;: [
+          71.2,
+          17.72,
+          11.08
+        ],
+        &quot;p75&quot;: 2692,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;TTFB&quot;: {
+        &quot;histogram&quot;: [],
+        &quot;p75&quot;: &quot;-&quot;,
+        &quot;rank&quot;: &quot;-&quot;
+      },
+      &quot;INP&quot;: {
+        &quot;histogram&quot;: [
+          95.97,
+          1.29,
+          2.74
+        ],
+        &quot;p75&quot;: 77,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;RTT&quot;: {
+        &quot;histogram&quot;: [
+          73.75,
+          25.23,
+          1.02
+        ],
+        &quot;p75&quot;: 76,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;minimalGood&quot;: 71.2
+    },
+    {
+      &quot;url&quot;: &quot;torreguacetohotel.it/&quot;,
+      &quot;CLS&quot;: {
+        &quot;histogram&quot;: [
+          99.29,
+          0.71,
+          0
+        ],
+        &quot;p75&quot;: &quot;0.02&quot;,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;FCP&quot;: {
+        &quot;histogram&quot;: [
+          85.81,
+          8.43,
+          5.75
+        ],
+        &quot;p75&quot;: 1278,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;LCP&quot;: {
+        &quot;histogram&quot;: [
+          70.24,
+          11.28,
+          18.47
+        ],
+        &quot;p75&quot;: 2940,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;TTFB&quot;: {
+        &quot;histogram&quot;: [
+          80.91,
+          9.1,
+          9.99
+        ],
+        &quot;p75&quot;: 550,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;INP&quot;: {
+        &quot;histogram&quot;: [
+          96.81,
+          3.19,
+          0
+        ],
+        &quot;p75&quot;: 73,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;RTT&quot;: {
+        &quot;histogram&quot;: [
+          72.4,
+          25.87,
+          1.73
+        ],
+        &quot;p75&quot;: 78,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;minimalGood&quot;: 70.24
+    },
+    {
+      &quot;url&quot;: &quot;borgobianco.it/&quot;,
+      &quot;CLS&quot;: {
+        &quot;histogram&quot;: [
+          100,
+          0,
+          0
+        ],
+        &quot;p75&quot;: &quot;0.02&quot;,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;FCP&quot;: {
+        &quot;histogram&quot;: [
+          82.39,
+          11.95,
+          5.65
+        ],
+        &quot;p75&quot;: 1173,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;LCP&quot;: {
+        &quot;histogram&quot;: [
+          68.63,
+          16.61,
+          14.75
+        ],
+        &quot;p75&quot;: 2927,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;TTFB&quot;: {
+        &quot;histogram&quot;: [
+          80.6,
+          6.8,
+          12.6
+        ],
+        &quot;p75&quot;: 486,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;INP&quot;: {
+        &quot;histogram&quot;: [
+          98.92,
+          1.08,
+          0
+        ],
+        &quot;p75&quot;: 64,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;RTT&quot;: {
+        &quot;histogram&quot;: [
+          54.17,
+          43.67,
+          2.16
+        ],
+        &quot;p75&quot;: 94,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;minimalGood&quot;: 68.63
+    },
+    {
+      &quot;url&quot;: &quot;www.greenblu.it/&quot;,
+      &quot;CLS&quot;: {
+        &quot;histogram&quot;: [
+          99.35,
+          0.42,
+          0.24
+        ],
+        &quot;p75&quot;: &quot;0.01&quot;,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;FCP&quot;: {
+        &quot;histogram&quot;: [
+          85.34,
+          5.28,
+          9.38
+        ],
+        &quot;p75&quot;: 1202,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;LCP&quot;: {
+        &quot;histogram&quot;: [
+          62.68,
+          19.36,
+          17.96
+        ],
+        &quot;p75&quot;: 3097,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;TTFB&quot;: {
+        &quot;histogram&quot;: [
+          90.4,
+          4.42,
+          5.18
+        ],
+        &quot;p75&quot;: 327,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;INP&quot;: {
+        &quot;histogram&quot;: [
+          91.34,
+          6.98,
+          1.68
+        ],
+        &quot;p75&quot;: 107,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;RTT&quot;: {
+        &quot;histogram&quot;: [
+          63.35,
+          35.9,
+          0.75
+        ],
+        &quot;p75&quot;: 85,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;minimalGood&quot;: 62.68
+    },
+    {
+      &quot;url&quot;: &quot;www.hotelpresidentlecce.it/&quot;,
+      &quot;CLS&quot;: {
+        &quot;histogram&quot;: [
+          79.33,
+          2.3,
+          18.37
+        ],
+        &quot;p75&quot;: &quot;0.03&quot;,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;FCP&quot;: {
+        &quot;histogram&quot;: [
+          68.01,
+          10.54,
+          21.46
+        ],
+        &quot;p75&quot;: 2648,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;LCP&quot;: {
+        &quot;histogram&quot;: [
+          58.98,
+          14.71,
+          26.31
+        ],
+        &quot;p75&quot;: 4690,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;TTFB&quot;: {
+        &quot;histogram&quot;: [
+          54.89,
+          16.5,
+          28.62
+        ],
+        &quot;p75&quot;: 2605,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;INP&quot;: {
+        &quot;histogram&quot;: [
+          96.69,
+          1.98,
+          1.33
+        ],
+        &quot;p75&quot;: 84,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;RTT&quot;: {
+        &quot;histogram&quot;: [
+          65.73,
+          31.75,
+          2.52
+        ],
+        &quot;p75&quot;: 82,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;minimalGood&quot;: 58.98
+    },
+    {
+      &quot;url&quot;: &quot;argonautihotel.it/&quot;,
+      &quot;CLS&quot;: {
+        &quot;histogram&quot;: [
+          98.22,
+          1.15,
+          0.63
+        ],
+        &quot;p75&quot;: &quot;0.02&quot;,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;FCP&quot;: {
+        &quot;histogram&quot;: [
+          70.28,
+          8.86,
+          20.86
+        ],
+        &quot;p75&quot;: 2224,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;LCP&quot;: {
+        &quot;histogram&quot;: [
+          57.01,
+          20.34,
+          22.66
+        ],
+        &quot;p75&quot;: 3510,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;TTFB&quot;: {
+        &quot;histogram&quot;: [
+          65.68,
+          8.55,
+          25.77
+        ],
+        &quot;p75&quot;: 1611,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;INP&quot;: {
+        &quot;histogram&quot;: [
+          97.49,
+          1.26,
+          1.26
+        ],
+        &quot;p75&quot;: 73,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;RTT&quot;: {
+        &quot;histogram&quot;: [
+          63,
+          36.45,
+          0.56
+        ],
+        &quot;p75&quot;: 91,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;minimalGood&quot;: 57.01
+    },
+    {
+      &quot;url&quot;: &quot;tichos-hotel.it/&quot;,
+      &quot;CLS&quot;: {
+        &quot;histogram&quot;: [
+          99.27,
+          0,
+          0.73
+        ],
+        &quot;p75&quot;: &quot;0.02&quot;,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;FCP&quot;: {
+        &quot;histogram&quot;: [
+          67.34,
+          4.74,
+          27.92
+        ],
+        &quot;p75&quot;: 3682,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;LCP&quot;: {
+        &quot;histogram&quot;: [
+          53.45,
+          13.25,
+          33.3
+        ],
+        &quot;p75&quot;: 5812,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;TTFB&quot;: {
+        &quot;histogram&quot;: [
+          59.09,
+          10.75,
+          30.16
+        ],
+        &quot;p75&quot;: 4258,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;INP&quot;: {
+        &quot;histogram&quot;: [
+          92.42,
+          5.66,
+          1.92
+        ],
+        &quot;p75&quot;: 78,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;RTT&quot;: {
+        &quot;histogram&quot;: [
+          59.16,
+          39.27,
+          1.57
+        ],
+        &quot;p75&quot;: 89,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;minimalGood&quot;: 53.45
+    },
+    {
+      &quot;url&quot;: &quot;biancodonda.com/&quot;,
+      &quot;CLS&quot;: {
+        &quot;histogram&quot;: [
+          79.31,
+          20.69,
+          0
+        ],
+        &quot;p75&quot;: &quot;0.08&quot;,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;FCP&quot;: {
+        &quot;histogram&quot;: [
+          46.14,
+          13.62,
+          40.24
+        ],
+        &quot;p75&quot;: 4656,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;LCP&quot;: {
+        &quot;histogram&quot;: [
+          41.82,
+          22.41,
+          35.78
+        ],
+        &quot;p75&quot;: 5435,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;TTFB&quot;: {
+        &quot;histogram&quot;: [],
+        &quot;p75&quot;: &quot;-&quot;,
+        &quot;rank&quot;: &quot;-&quot;
+      },
+      &quot;INP&quot;: {
+        &quot;histogram&quot;: [],
+        &quot;p75&quot;: &quot;-&quot;,
+        &quot;rank&quot;: &quot;-&quot;
+      },
+      &quot;RTT&quot;: {
+        &quot;histogram&quot;: [
+          65.43,
+          31.1,
+          3.47
+        ],
+        &quot;p75&quot;: 87,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;minimalGood&quot;: 41.82
+    },
+    {
+      &quot;url&quot;: &quot;movenpickhotelbari.it/&quot;,
+      &quot;CLS&quot;: {
+        &quot;histogram&quot;: [
+          100,
+          0,
+          0
+        ],
+        &quot;p75&quot;: &quot;0.02&quot;,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;FCP&quot;: {
+        &quot;histogram&quot;: [
+          41.65,
+          16.64,
+          41.72
+        ],
+        &quot;p75&quot;: 5729,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;LCP&quot;: {
+        &quot;histogram&quot;: [
+          37.84,
+          17.05,
+          45.1
+        ],
+        &quot;p75&quot;: 6821,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;TTFB&quot;: {
+        &quot;histogram&quot;: [
+          35.78,
+          10.58,
+          53.64
+        ],
+        &quot;p75&quot;: 5352,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;INP&quot;: {
+        &quot;histogram&quot;: [
+          93.02,
+          4.48,
+          2.51
+        ],
+        &quot;p75&quot;: 82,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;RTT&quot;: {
+        &quot;histogram&quot;: [
+          73.85,
+          26.15,
+          0
+        ],
+        &quot;p75&quot;: 75,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;minimalGood&quot;: 37.84
+    }
+  ]
+}</pre></div></div></main></body></html><script type="module">var e=`phone`,t=`origin`;function n(){document.querySelectorAll(`[data-device]`).forEach(t=>{t.classList.toggle(`active`,t.getAttribute(`data-device`)===e)}),document.querySelectorAll(`[data-scope]`).forEach(e=>{e.classList.toggle(`active`,e.getAttribute(`data-scope`)===t)}),document.querySelectorAll(`.view-content`).forEach(e=>{e.classList.remove(`active`)});let n=document.getElementById(`view-${e}-${t}`);n&&n.classList.add(`active`)}document.querySelectorAll(`[data-device]`).forEach(t=>{t.addEventListener(`click`,()=>{e=t.getAttribute(`data-device`)||`phone`,n()})}),document.querySelectorAll(`[data-scope]`).forEach(e=>{e.addEventListener(`click`,()=>{t=e.getAttribute(`data-scope`)||`origin`,n()})});</script>

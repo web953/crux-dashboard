@@ -1,0 +1,1127 @@
+<!DOCTYPE html><html lang="en" data-astro-cid-ju4pidww><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width"><title>Siti nicolaus</title><link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="stylesheet" href="/style/global.css"><style>nav[data-astro-cid-ju4pidww] ul[data-astro-cid-ju4pidww],li[data-astro-cid-ju4pidww]{margin-bottom:2em;list-style:none}nav[data-astro-cid-ju4pidww] li[data-astro-cid-ju4pidww]{margin:0 10px;display:inline-block}nav[data-astro-cid-ju4pidww] span[data-astro-cid-ju4pidww]{color:bisque;font-weight:700}nav[data-astro-cid-ju4pidww] ul[data-astro-cid-ju4pidww]{background:#000;padding:5px;top:0;right:0}nav[data-astro-cid-ju4pidww] a[data-astro-cid-ju4pidww],nav[data-astro-cid-ju4pidww] li[data-astro-cid-ju4pidww]{color:#fff}
+.page-container[data-astro-cid-qulgs7oj]{max-width:1100px;margin:0 auto;padding:2rem 1rem;font-family:system-ui,-apple-system,sans-serif}.top-bar[data-astro-cid-qulgs7oj]{margin-bottom:1.5rem}.back-link[data-astro-cid-qulgs7oj]{color:#2563eb;font-size:.875rem;font-weight:600;text-decoration:none}.page-title[data-astro-cid-qulgs7oj]{color:#111827;text-transform:capitalize;margin:.5rem 0 0;font-size:2rem;font-weight:800}.filter-panel[data-astro-cid-qulgs7oj]{background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;flex-wrap:wrap;align-items:center;gap:1.5rem;margin-bottom:2rem;padding:1rem 1.25rem;display:flex}.filter-group[data-astro-cid-qulgs7oj]{align-items:center;gap:.75rem;display:flex}.filter-label[data-astro-cid-qulgs7oj]{color:#475569;font-size:.875rem;font-weight:700}.toggle-buttons[data-astro-cid-qulgs7oj]{background:#e2e8f0;border-radius:8px;gap:2px;padding:3px;display:flex}.toggle-btn[data-astro-cid-qulgs7oj]{color:#64748b;cursor:pointer;background:0 0;border:none;border-radius:6px;padding:.4rem .85rem;font-size:.8125rem;font-weight:600;transition:all .15s}.toggle-btn[data-astro-cid-qulgs7oj].active{color:#0f172a;background:#fff;box-shadow:0 1px 3px #0000001a}.view-content[data-astro-cid-qulgs7oj]{display:none}.view-content[data-astro-cid-qulgs7oj].active{display:block}.view-content[data-astro-cid-qulgs7oj] h2[data-astro-cid-qulgs7oj]{color:#1e293b;margin-bottom:1rem;font-size:1.25rem}.data-box[data-astro-cid-qulgs7oj]{color:#38bdf8;background:#0f172a;border-radius:8px;padding:1.25rem;font-size:.85rem;overflow-x:auto}.no-data[data-astro-cid-qulgs7oj]{color:#94a3b8;font-style:italic}
+</style></head><body data-astro-cid-ju4pidww><main class="page-container" data-astro-cid-qulgs7oj><div class="top-bar" data-astro-cid-qulgs7oj><a href="/" class="back-link" data-astro-cid-qulgs7oj>← Torna alla Dashboard</a><h1 class="page-title" data-astro-cid-qulgs7oj>Siti nicolaus</h1></div><!-- Pannello dei Filtri Interattivi --><div class="filter-panel" data-astro-cid-qulgs7oj><div class="filter-group" data-astro-cid-qulgs7oj><span class="filter-label" data-astro-cid-qulgs7oj>Dispositivo:</span><div class="toggle-buttons" data-astro-cid-qulgs7oj><button class="toggle-btn active" data-device="phone" data-astro-cid-qulgs7oj>📱 Phone</button><button class="toggle-btn" data-device="desktop" data-astro-cid-qulgs7oj>💻 Desktop</button></div></div><div class="filter-group" data-astro-cid-qulgs7oj><span class="filter-label" data-astro-cid-qulgs7oj>Analisi:</span><div class="toggle-buttons" data-astro-cid-qulgs7oj><button class="toggle-btn active" data-scope="origin" data-astro-cid-qulgs7oj>📊 Intero Sito</button><button class="toggle-btn" data-scope="url" data-astro-cid-qulgs7oj>🏠 Home Page</button></div></div></div><!-- Sezioni Dati --><div class="views-container" data-astro-cid-qulgs7oj><div class="view-content active" id="view-phone-origin" data-astro-cid-qulgs7oj><h2 data-astro-cid-qulgs7oj>Report: Phone / Intero Sito</h2><pre class="data-box" data-astro-cid-qulgs7oj>{
+  &quot;params&quot;: {
+    &quot;formFactor&quot;: &quot;PHONE&quot;,
+    &quot;origin&quot;: true,
+    &quot;collectionPeriod&quot;: {
+      &quot;firstDate&quot;: {
+        &quot;year&quot;: 2026,
+        &quot;month&quot;: 8,
+        &quot;day&quot;: 23
+      },
+      &quot;lastDate&quot;: {
+        &quot;year&quot;: 2026,
+        &quot;month&quot;: 9,
+        &quot;day&quot;: 19
+      }
+    },
+    &quot;date&quot;: &quot;21.09.2026&quot;
+  },
+  &quot;metrics&quot;: [
+    {
+      &quot;url&quot;: &quot;valturcristallo.com&quot;,
+      &quot;CLS&quot;: {
+        &quot;histogram&quot;: [
+          68.31,
+          1.79,
+          29.9
+        ],
+        &quot;p75&quot;: &quot;0.68&quot;,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;FCP&quot;: {
+        &quot;histogram&quot;: [
+          78.72,
+          4.41,
+          16.87
+        ],
+        &quot;p75&quot;: 1285,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;LCP&quot;: {
+        &quot;histogram&quot;: [
+          76.21,
+          6.44,
+          17.36
+        ],
+        &quot;p75&quot;: 2316,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;TTFB&quot;: {
+        &quot;histogram&quot;: [
+          71.77,
+          6.02,
+          22.21
+        ],
+        &quot;p75&quot;: 1161,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;INP&quot;: {
+        &quot;histogram&quot;: [
+          88.8,
+          9.3,
+          1.89
+        ],
+        &quot;p75&quot;: 127,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;RTT&quot;: {
+        &quot;histogram&quot;: [
+          34.94,
+          59.21,
+          5.85
+        ],
+        &quot;p75&quot;: 142,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;minimalGood&quot;: 68.31
+    },
+    {
+      &quot;url&quot;: &quot;nicolausclublagiurlita.com&quot;,
+      &quot;CLS&quot;: {
+        &quot;histogram&quot;: [
+          88.22,
+          10.58,
+          1.19
+        ],
+        &quot;p75&quot;: &quot;0.03&quot;,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;FCP&quot;: {
+        &quot;histogram&quot;: [
+          49.48,
+          24.32,
+          26.2
+        ],
+        &quot;p75&quot;: 3112,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;LCP&quot;: {
+        &quot;histogram&quot;: [
+          55.27,
+          20.53,
+          24.2
+        ],
+        &quot;p75&quot;: 3874,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;TTFB&quot;: {
+        &quot;histogram&quot;: [
+          7.55,
+          47.62,
+          44.84
+        ],
+        &quot;p75&quot;: 2848,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;INP&quot;: {
+        &quot;histogram&quot;: [
+          90.17,
+          8.84,
+          0.99
+        ],
+        &quot;p75&quot;: 119,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;RTT&quot;: {
+        &quot;histogram&quot;: [
+          41.28,
+          52.18,
+          6.54
+        ],
+        &quot;p75&quot;: 131,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;minimalGood&quot;: 55.27
+    },
+    {
+      &quot;url&quot;: &quot;nicolausprimeilgabbiano.com&quot;,
+      &quot;CLS&quot;: {
+        &quot;histogram&quot;: [
+          66.77,
+          28.95,
+          4.28
+        ],
+        &quot;p75&quot;: &quot;0.14&quot;,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;FCP&quot;: {
+        &quot;histogram&quot;: [
+          43.3,
+          24.53,
+          32.17
+        ],
+        &quot;p75&quot;: 3696,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;LCP&quot;: {
+        &quot;histogram&quot;: [
+          42.63,
+          17.23,
+          40.14
+        ],
+        &quot;p75&quot;: 5629,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;TTFB&quot;: {
+        &quot;histogram&quot;: [
+          15.41,
+          46.59,
+          38
+        ],
+        &quot;p75&quot;: 2502,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;INP&quot;: {
+        &quot;histogram&quot;: [
+          86.74,
+          11.29,
+          1.96
+        ],
+        &quot;p75&quot;: 136,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;RTT&quot;: {
+        &quot;histogram&quot;: [
+          31.87,
+          62.27,
+          5.86
+        ],
+        &quot;p75&quot;: 132,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;minimalGood&quot;: 42.63
+    },
+    {
+      &quot;url&quot;: &quot;nicolausclubbagamoyo.com&quot;,
+      &quot;CLS&quot;: {
+        &quot;histogram&quot;: [
+          97.76,
+          0.33,
+          1.9
+        ],
+        &quot;p75&quot;: &quot;0.00&quot;,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;FCP&quot;: {
+        &quot;histogram&quot;: [
+          39.57,
+          31.02,
+          29.41
+        ],
+        &quot;p75&quot;: 3325,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;LCP&quot;: {
+        &quot;histogram&quot;: [
+          34.61,
+          24.91,
+          40.48
+        ],
+        &quot;p75&quot;: 5336,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;TTFB&quot;: {
+        &quot;histogram&quot;: [
+          5.19,
+          49.03,
+          45.78
+        ],
+        &quot;p75&quot;: 2601,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;INP&quot;: {
+        &quot;histogram&quot;: [
+          84.81,
+          13.08,
+          2.11
+        ],
+        &quot;p75&quot;: 144,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;RTT&quot;: {
+        &quot;histogram&quot;: [
+          30.45,
+          61.73,
+          7.82
+        ],
+        &quot;p75&quot;: 138,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;minimalGood&quot;: 34.61
+    },
+    {
+      &quot;url&quot;: &quot;shamabeach.com&quot;,
+      &quot;CLS&quot;: {
+        &quot;histogram&quot;: [
+          97.27,
+          2.03,
+          0.7
+        ],
+        &quot;p75&quot;: &quot;0.00&quot;,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;FCP&quot;: {
+        &quot;histogram&quot;: [
+          14.38,
+          16.36,
+          69.27
+        ],
+        &quot;p75&quot;: 6749,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;LCP&quot;: {
+        &quot;histogram&quot;: [
+          15.01,
+          11.83,
+          73.15
+        ],
+        &quot;p75&quot;: 9032,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;TTFB&quot;: {
+        &quot;histogram&quot;: [
+          5.35,
+          13.44,
+          81.21
+        ],
+        &quot;p75&quot;: 6114,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;INP&quot;: {
+        &quot;histogram&quot;: [
+          86.57,
+          12.27,
+          1.16
+        ],
+        &quot;p75&quot;: 137,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;RTT&quot;: {
+        &quot;histogram&quot;: [
+          23.17,
+          56.08,
+          20.76
+        ],
+        &quot;p75&quot;: 233,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;minimalGood&quot;: 15.01
+    }
+  ]
+}</pre></div><div class="view-content" id="view-phone-url" data-astro-cid-qulgs7oj><h2 data-astro-cid-qulgs7oj>Report: Phone / Home Page</h2><pre class="data-box" data-astro-cid-qulgs7oj>{
+  &quot;params&quot;: {
+    &quot;formFactor&quot;: &quot;PHONE&quot;,
+    &quot;url&quot;: true,
+    &quot;collectionPeriod&quot;: {
+      &quot;firstDate&quot;: {
+        &quot;year&quot;: 2026,
+        &quot;month&quot;: 8,
+        &quot;day&quot;: 23
+      },
+      &quot;lastDate&quot;: {
+        &quot;year&quot;: 2026,
+        &quot;month&quot;: 9,
+        &quot;day&quot;: 19
+      }
+    },
+    &quot;date&quot;: &quot;21.09.2026&quot;
+  },
+  &quot;metrics&quot;: [
+    {
+      &quot;url&quot;: &quot;nicolausclublagiurlita.com/&quot;,
+      &quot;CLS&quot;: {
+        &quot;histogram&quot;: [
+          83.72,
+          14.68,
+          1.6
+        ],
+        &quot;p75&quot;: &quot;0.04&quot;,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;FCP&quot;: {
+        &quot;histogram&quot;: [
+          38.47,
+          26.59,
+          34.95
+        ],
+        &quot;p75&quot;: 4106,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;LCP&quot;: {
+        &quot;histogram&quot;: [
+          46.22,
+          22.27,
+          31.5
+        ],
+        &quot;p75&quot;: 5102,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;TTFB&quot;: {
+        &quot;histogram&quot;: [
+          7.89,
+          38.97,
+          53.13
+        ],
+        &quot;p75&quot;: 4552,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;INP&quot;: {
+        &quot;histogram&quot;: [
+          88.26,
+          10.62,
+          1.11
+        ],
+        &quot;p75&quot;: 134,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;RTT&quot;: {
+        &quot;histogram&quot;: [
+          41.92,
+          50.77,
+          7.31
+        ],
+        &quot;p75&quot;: 124,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;minimalGood&quot;: 46.22
+    },
+    {
+      &quot;url&quot;: &quot;valturcristallo.com/&quot;,
+      &quot;CLS&quot;: {
+        &quot;histogram&quot;: [
+          45.77,
+          0.75,
+          53.48
+        ],
+        &quot;p75&quot;: &quot;0.69&quot;,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;FCP&quot;: {
+        &quot;histogram&quot;: [
+          59.91,
+          5.01,
+          35.07
+        ],
+        &quot;p75&quot;: 6644,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;LCP&quot;: {
+        &quot;histogram&quot;: [
+          54.89,
+          8.81,
+          36.3
+        ],
+        &quot;p75&quot;: 8144,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;TTFB&quot;: {
+        &quot;histogram&quot;: [
+          51.2,
+          5.78,
+          43.02
+        ],
+        &quot;p75&quot;: 7410,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;INP&quot;: {
+        &quot;histogram&quot;: [
+          89.08,
+          9.17,
+          1.75
+        ],
+        &quot;p75&quot;: 131,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;RTT&quot;: {
+        &quot;histogram&quot;: [
+          35.98,
+          55.87,
+          8.15
+        ],
+        &quot;p75&quot;: 135,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;minimalGood&quot;: 45.77
+    },
+    {
+      &quot;url&quot;: &quot;nicolausprimeilgabbiano.com/&quot;,
+      &quot;CLS&quot;: {
+        &quot;histogram&quot;: [
+          47.13,
+          48.21,
+          4.66
+        ],
+        &quot;p75&quot;: &quot;0.15&quot;,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;FCP&quot;: {
+        &quot;histogram&quot;: [
+          31.7,
+          25.43,
+          42.87
+        ],
+        &quot;p75&quot;: 4830,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;LCP&quot;: {
+        &quot;histogram&quot;: [
+          25.3,
+          16.96,
+          57.73
+        ],
+        &quot;p75&quot;: 7138,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;TTFB&quot;: {
+        &quot;histogram&quot;: [
+          9.79,
+          42.94,
+          47.26
+        ],
+        &quot;p75&quot;: 3270,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;INP&quot;: {
+        &quot;histogram&quot;: [
+          84.59,
+          13.03,
+          2.38
+        ],
+        &quot;p75&quot;: 148,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;RTT&quot;: {
+        &quot;histogram&quot;: [
+          34.02,
+          59.18,
+          6.8
+        ],
+        &quot;p75&quot;: 130,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;minimalGood&quot;: 25.3
+    },
+    {
+      &quot;url&quot;: &quot;nicolausclubbagamoyo.com/&quot;,
+      &quot;CLS&quot;: {
+        &quot;histogram&quot;: [
+          99.21,
+          0.35,
+          0.44
+        ],
+        &quot;p75&quot;: &quot;0.01&quot;,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;FCP&quot;: {
+        &quot;histogram&quot;: [
+          31.55,
+          33.24,
+          35.21
+        ],
+        &quot;p75&quot;: 3644,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;LCP&quot;: {
+        &quot;histogram&quot;: [
+          23.02,
+          27.27,
+          49.71
+        ],
+        &quot;p75&quot;: 6123,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;TTFB&quot;: {
+        &quot;histogram&quot;: [
+          5.22,
+          43.63,
+          51.16
+        ],
+        &quot;p75&quot;: 2859,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;INP&quot;: {
+        &quot;histogram&quot;: [
+          84.35,
+          13.41,
+          2.23
+        ],
+        &quot;p75&quot;: 147,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;RTT&quot;: {
+        &quot;histogram&quot;: [
+          30.75,
+          61.55,
+          7.71
+        ],
+        &quot;p75&quot;: 141,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;minimalGood&quot;: 23.02
+    },
+    {
+      &quot;url&quot;: &quot;shamabeach.com/&quot;,
+      &quot;CLS&quot;: {
+        &quot;histogram&quot;: [
+          97.33,
+          2.29,
+          0.38
+        ],
+        &quot;p75&quot;: &quot;0.00&quot;,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;FCP&quot;: {
+        &quot;histogram&quot;: [
+          12.83,
+          13.16,
+          74.01
+        ],
+        &quot;p75&quot;: 6892,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;LCP&quot;: {
+        &quot;histogram&quot;: [
+          13.77,
+          9.11,
+          77.12
+        ],
+        &quot;p75&quot;: 9175,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;TTFB&quot;: {
+        &quot;histogram&quot;: [
+          4.69,
+          9.82,
+          85.49
+        ],
+        &quot;p75&quot;: 6179,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;INP&quot;: {
+        &quot;histogram&quot;: [
+          85.45,
+          13.31,
+          1.24
+        ],
+        &quot;p75&quot;: 141,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;RTT&quot;: {
+        &quot;histogram&quot;: [
+          23.24,
+          56.42,
+          20.34
+        ],
+        &quot;p75&quot;: 233,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;minimalGood&quot;: 13.77
+    }
+  ]
+}</pre></div><div class="view-content" id="view-desktop-origin" data-astro-cid-qulgs7oj><h2 data-astro-cid-qulgs7oj>Report: Desktop / Intero Sito</h2><pre class="data-box" data-astro-cid-qulgs7oj>{
+  &quot;params&quot;: {
+    &quot;formFactor&quot;: &quot;DESKTOP&quot;,
+    &quot;origin&quot;: true,
+    &quot;collectionPeriod&quot;: {
+      &quot;firstDate&quot;: {
+        &quot;year&quot;: 2026,
+        &quot;month&quot;: 8,
+        &quot;day&quot;: 23
+      },
+      &quot;lastDate&quot;: {
+        &quot;year&quot;: 2026,
+        &quot;month&quot;: 9,
+        &quot;day&quot;: 19
+      }
+    },
+    &quot;date&quot;: &quot;21.09.2026&quot;
+  },
+  &quot;metrics&quot;: [
+    {
+      &quot;url&quot;: &quot;nicolausclubbagamoyo.com&quot;,
+      &quot;CLS&quot;: {
+        &quot;histogram&quot;: [
+          92.45,
+          3.92,
+          3.63
+        ],
+        &quot;p75&quot;: &quot;0.02&quot;,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;FCP&quot;: {
+        &quot;histogram&quot;: [
+          86.36,
+          6.48,
+          7.16
+        ],
+        &quot;p75&quot;: 1163,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;LCP&quot;: {
+        &quot;histogram&quot;: [
+          72.06,
+          14.53,
+          13.41
+        ],
+        &quot;p75&quot;: 2675,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;TTFB&quot;: {
+        &quot;histogram&quot;: [
+          74.17,
+          13.93,
+          11.9
+        ],
+        &quot;p75&quot;: 815,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;INP&quot;: {
+        &quot;histogram&quot;: [
+          97.76,
+          1.66,
+          0.58
+        ],
+        &quot;p75&quot;: 60,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;RTT&quot;: {
+        &quot;histogram&quot;: [
+          66.14,
+          32.67,
+          1.19
+        ],
+        &quot;p75&quot;: 90,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;minimalGood&quot;: 72.06
+    },
+    {
+      &quot;url&quot;: &quot;valturcristallo.com&quot;,
+      &quot;CLS&quot;: {
+        &quot;histogram&quot;: [
+          58.08,
+          13.3,
+          28.62
+        ],
+        &quot;p75&quot;: &quot;0.34&quot;,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;FCP&quot;: {
+        &quot;histogram&quot;: [
+          87.22,
+          2.91,
+          9.87
+        ],
+        &quot;p75&quot;: 831,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;LCP&quot;: {
+        &quot;histogram&quot;: [
+          76.16,
+          10.42,
+          13.41
+        ],
+        &quot;p75&quot;: 2373,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;TTFB&quot;: {
+        &quot;histogram&quot;: [
+          78.2,
+          5.15,
+          16.65
+        ],
+        &quot;p75&quot;: 680,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;INP&quot;: {
+        &quot;histogram&quot;: [
+          98.57,
+          0.99,
+          0.43
+        ],
+        &quot;p75&quot;: 55,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;RTT&quot;: {
+        &quot;histogram&quot;: [
+          74.47,
+          23.83,
+          1.7
+        ],
+        &quot;p75&quot;: 75,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;minimalGood&quot;: 58.08
+    },
+    {
+      &quot;url&quot;: &quot;nicolausprimeilgabbiano.com&quot;,
+      &quot;CLS&quot;: {
+        &quot;histogram&quot;: [
+          49.72,
+          44.08,
+          6.2
+        ],
+        &quot;p75&quot;: &quot;0.15&quot;,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;FCP&quot;: {
+        &quot;histogram&quot;: [
+          58.99,
+          17.98,
+          23.03
+        ],
+        &quot;p75&quot;: 2777,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;LCP&quot;: {
+        &quot;histogram&quot;: [
+          51.18,
+          21.94,
+          26.88
+        ],
+        &quot;p75&quot;: 4276,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;TTFB&quot;: {
+        &quot;histogram&quot;: [
+          23.52,
+          44.16,
+          32.32
+        ],
+        &quot;p75&quot;: 2064,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;INP&quot;: {
+        &quot;histogram&quot;: [
+          95.81,
+          3.74,
+          0.45
+        ],
+        &quot;p75&quot;: 62,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;RTT&quot;: {
+        &quot;histogram&quot;: [
+          67.44,
+          31.23,
+          1.33
+        ],
+        &quot;p75&quot;: 81,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;minimalGood&quot;: 49.72
+    },
+    {
+      &quot;url&quot;: &quot;nicolausclublagiurlita.com&quot;,
+      &quot;CLS&quot;: {
+        &quot;histogram&quot;: [
+          31.95,
+          6.85,
+          61.2
+        ],
+        &quot;p75&quot;: &quot;0.44&quot;,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;FCP&quot;: {
+        &quot;histogram&quot;: [
+          69.45,
+          16.69,
+          13.86
+        ],
+        &quot;p75&quot;: 2065,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;LCP&quot;: {
+        &quot;histogram&quot;: [
+          73.91,
+          13.19,
+          12.9
+        ],
+        &quot;p75&quot;: 2620,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;TTFB&quot;: {
+        &quot;histogram&quot;: [
+          15.39,
+          59.3,
+          25.3
+        ],
+        &quot;p75&quot;: 1933,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;INP&quot;: {
+        &quot;histogram&quot;: [
+          98.06,
+          1.21,
+          0.73
+        ],
+        &quot;p75&quot;: 44,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;RTT&quot;: {
+        &quot;histogram&quot;: [
+          69.24,
+          30.2,
+          0.56
+        ],
+        &quot;p75&quot;: 80,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;minimalGood&quot;: 31.95
+    }
+  ]
+}</pre></div><div class="view-content" id="view-desktop-url" data-astro-cid-qulgs7oj><h2 data-astro-cid-qulgs7oj>Report: Desktop / Home Page</h2><pre class="data-box" data-astro-cid-qulgs7oj>{
+  &quot;params&quot;: {
+    &quot;formFactor&quot;: &quot;DESKTOP&quot;,
+    &quot;url&quot;: true,
+    &quot;collectionPeriod&quot;: {
+      &quot;firstDate&quot;: {
+        &quot;year&quot;: 2026,
+        &quot;month&quot;: 8,
+        &quot;day&quot;: 23
+      },
+      &quot;lastDate&quot;: {
+        &quot;year&quot;: 2026,
+        &quot;month&quot;: 9,
+        &quot;day&quot;: 19
+      }
+    },
+    &quot;date&quot;: &quot;21.09.2026&quot;
+  },
+  &quot;metrics&quot;: [
+    {
+      &quot;url&quot;: &quot;nicolausclubbagamoyo.com/&quot;,
+      &quot;CLS&quot;: {
+        &quot;histogram&quot;: [
+          96.43,
+          2.2,
+          1.37
+        ],
+        &quot;p75&quot;: &quot;0.02&quot;,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;FCP&quot;: {
+        &quot;histogram&quot;: [
+          77.1,
+          10.9,
+          12
+        ],
+        &quot;p75&quot;: 1593,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;LCP&quot;: {
+        &quot;histogram&quot;: [
+          56.24,
+          22.12,
+          21.64
+        ],
+        &quot;p75&quot;: 3775,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;TTFB&quot;: {
+        &quot;histogram&quot;: [
+          50.9,
+          26.84,
+          22.26
+        ],
+        &quot;p75&quot;: 1491,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;INP&quot;: {
+        &quot;histogram&quot;: [
+          97.93,
+          1.04,
+          1.04
+        ],
+        &quot;p75&quot;: 64,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;RTT&quot;: {
+        &quot;histogram&quot;: [
+          71.43,
+          26.46,
+          2.12
+        ],
+        &quot;p75&quot;: 82,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;minimalGood&quot;: 56.24
+    },
+    {
+      &quot;url&quot;: &quot;nicolausclublagiurlita.com/&quot;,
+      &quot;CLS&quot;: {
+        &quot;histogram&quot;: [
+          32.87,
+          4.66,
+          62.47
+        ],
+        &quot;p75&quot;: &quot;0.41&quot;,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;FCP&quot;: {
+        &quot;histogram&quot;: [
+          55.58,
+          25.35,
+          19.07
+        ],
+        &quot;p75&quot;: 2584,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;LCP&quot;: {
+        &quot;histogram&quot;: [
+          60.02,
+          20.16,
+          19.81
+        ],
+        &quot;p75&quot;: 3374,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;TTFB&quot;: {
+        &quot;histogram&quot;: [
+          18.11,
+          44.67,
+          37.22
+        ],
+        &quot;p75&quot;: 2347,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;INP&quot;: {
+        &quot;histogram&quot;: [
+          98.11,
+          1.26,
+          0.63
+        ],
+        &quot;p75&quot;: 49,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;RTT&quot;: {
+        &quot;histogram&quot;: [
+          66.78,
+          32.7,
+          0.52
+        ],
+        &quot;p75&quot;: 81,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;minimalGood&quot;: 32.87
+    },
+    {
+      &quot;url&quot;: &quot;valturcristallo.com/&quot;,
+      &quot;CLS&quot;: {
+        &quot;histogram&quot;: [
+          23.12,
+          7.06,
+          69.83
+        ],
+        &quot;p75&quot;: &quot;0.40&quot;,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;FCP&quot;: {
+        &quot;histogram&quot;: [
+          73.01,
+          5.65,
+          21.35
+        ],
+        &quot;p75&quot;: 1975,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;LCP&quot;: {
+        &quot;histogram&quot;: [
+          47.42,
+          22.47,
+          30.11
+        ],
+        &quot;p75&quot;: 4915,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;TTFB&quot;: {
+        &quot;histogram&quot;: [
+          64.26,
+          5.64,
+          30.09
+        ],
+        &quot;p75&quot;: 2677,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;INP&quot;: {
+        &quot;histogram&quot;: [
+          98.17,
+          1.13,
+          0.69
+        ],
+        &quot;p75&quot;: 53,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;RTT&quot;: {
+        &quot;histogram&quot;: [
+          72.72,
+          25.49,
+          1.79
+        ],
+        &quot;p75&quot;: 78,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;minimalGood&quot;: 23.12
+    },
+    {
+      &quot;url&quot;: &quot;nicolausprimeilgabbiano.com/&quot;,
+      &quot;CLS&quot;: {
+        &quot;histogram&quot;: [
+          55.5,
+          39,
+          5.5
+        ],
+        &quot;p75&quot;: &quot;0.15&quot;,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;FCP&quot;: {
+        &quot;histogram&quot;: [
+          47.46,
+          22.77,
+          29.77
+        ],
+        &quot;p75&quot;: 3807,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;LCP&quot;: {
+        &quot;histogram&quot;: [
+          20.44,
+          36.73,
+          42.83
+        ],
+        &quot;p75&quot;: 5838,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;TTFB&quot;: {
+        &quot;histogram&quot;: [
+          13.01,
+          46.6,
+          40.39
+        ],
+        &quot;p75&quot;: 2611,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;INP&quot;: {
+        &quot;histogram&quot;: [
+          94.53,
+          4.89,
+          0.58
+        ],
+        &quot;p75&quot;: 73,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;RTT&quot;: {
+        &quot;histogram&quot;: [
+          70.55,
+          28.55,
+          0.9
+        ],
+        &quot;p75&quot;: 78,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;minimalGood&quot;: 20.44
+    }
+  ]
+}</pre></div></div></main></body></html><script type="module">var e=`phone`,t=`origin`;function n(){document.querySelectorAll(`[data-device]`).forEach(t=>{t.classList.toggle(`active`,t.getAttribute(`data-device`)===e)}),document.querySelectorAll(`[data-scope]`).forEach(e=>{e.classList.toggle(`active`,e.getAttribute(`data-scope`)===t)}),document.querySelectorAll(`.view-content`).forEach(e=>{e.classList.remove(`active`)});let n=document.getElementById(`view-${e}-${t}`);n&&n.classList.add(`active`)}document.querySelectorAll(`[data-device]`).forEach(t=>{t.addEventListener(`click`,()=>{e=t.getAttribute(`data-device`)||`phone`,n()})}),document.querySelectorAll(`[data-scope]`).forEach(e=>{e.addEventListener(`click`,()=>{t=e.getAttribute(`data-scope`)||`origin`,n()})});</script>

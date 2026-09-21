@@ -1,0 +1,1285 @@
+<!DOCTYPE html><html lang="en" data-astro-cid-ju4pidww><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width"><title>Siti push studio</title><link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="stylesheet" href="/style/global.css"><style>nav[data-astro-cid-ju4pidww] ul[data-astro-cid-ju4pidww],li[data-astro-cid-ju4pidww]{margin-bottom:2em;list-style:none}nav[data-astro-cid-ju4pidww] li[data-astro-cid-ju4pidww]{margin:0 10px;display:inline-block}nav[data-astro-cid-ju4pidww] span[data-astro-cid-ju4pidww]{color:bisque;font-weight:700}nav[data-astro-cid-ju4pidww] ul[data-astro-cid-ju4pidww]{background:#000;padding:5px;top:0;right:0}nav[data-astro-cid-ju4pidww] a[data-astro-cid-ju4pidww],nav[data-astro-cid-ju4pidww] li[data-astro-cid-ju4pidww]{color:#fff}
+.page-container[data-astro-cid-qulgs7oj]{max-width:1100px;margin:0 auto;padding:2rem 1rem;font-family:system-ui,-apple-system,sans-serif}.top-bar[data-astro-cid-qulgs7oj]{margin-bottom:1.5rem}.back-link[data-astro-cid-qulgs7oj]{color:#2563eb;font-size:.875rem;font-weight:600;text-decoration:none}.page-title[data-astro-cid-qulgs7oj]{color:#111827;text-transform:capitalize;margin:.5rem 0 0;font-size:2rem;font-weight:800}.filter-panel[data-astro-cid-qulgs7oj]{background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;flex-wrap:wrap;align-items:center;gap:1.5rem;margin-bottom:2rem;padding:1rem 1.25rem;display:flex}.filter-group[data-astro-cid-qulgs7oj]{align-items:center;gap:.75rem;display:flex}.filter-label[data-astro-cid-qulgs7oj]{color:#475569;font-size:.875rem;font-weight:700}.toggle-buttons[data-astro-cid-qulgs7oj]{background:#e2e8f0;border-radius:8px;gap:2px;padding:3px;display:flex}.toggle-btn[data-astro-cid-qulgs7oj]{color:#64748b;cursor:pointer;background:0 0;border:none;border-radius:6px;padding:.4rem .85rem;font-size:.8125rem;font-weight:600;transition:all .15s}.toggle-btn[data-astro-cid-qulgs7oj].active{color:#0f172a;background:#fff;box-shadow:0 1px 3px #0000001a}.view-content[data-astro-cid-qulgs7oj]{display:none}.view-content[data-astro-cid-qulgs7oj].active{display:block}.view-content[data-astro-cid-qulgs7oj] h2[data-astro-cid-qulgs7oj]{color:#1e293b;margin-bottom:1rem;font-size:1.25rem}.data-box[data-astro-cid-qulgs7oj]{color:#38bdf8;background:#0f172a;border-radius:8px;padding:1.25rem;font-size:.85rem;overflow-x:auto}.no-data[data-astro-cid-qulgs7oj]{color:#94a3b8;font-style:italic}
+</style></head><body data-astro-cid-ju4pidww><main class="page-container" data-astro-cid-qulgs7oj><div class="top-bar" data-astro-cid-qulgs7oj><a href="/" class="back-link" data-astro-cid-qulgs7oj>← Torna alla Dashboard</a><h1 class="page-title" data-astro-cid-qulgs7oj>Siti push studio</h1></div><!-- Pannello dei Filtri Interattivi --><div class="filter-panel" data-astro-cid-qulgs7oj><div class="filter-group" data-astro-cid-qulgs7oj><span class="filter-label" data-astro-cid-qulgs7oj>Dispositivo:</span><div class="toggle-buttons" data-astro-cid-qulgs7oj><button class="toggle-btn active" data-device="phone" data-astro-cid-qulgs7oj>📱 Phone</button><button class="toggle-btn" data-device="desktop" data-astro-cid-qulgs7oj>💻 Desktop</button></div></div><div class="filter-group" data-astro-cid-qulgs7oj><span class="filter-label" data-astro-cid-qulgs7oj>Analisi:</span><div class="toggle-buttons" data-astro-cid-qulgs7oj><button class="toggle-btn active" data-scope="origin" data-astro-cid-qulgs7oj>📊 Intero Sito</button><button class="toggle-btn" data-scope="url" data-astro-cid-qulgs7oj>🏠 Home Page</button></div></div></div><!-- Sezioni Dati --><div class="views-container" data-astro-cid-qulgs7oj><div class="view-content active" id="view-phone-origin" data-astro-cid-qulgs7oj><h2 data-astro-cid-qulgs7oj>Report: Phone / Intero Sito</h2><pre class="data-box" data-astro-cid-qulgs7oj>{
+  &quot;params&quot;: {
+    &quot;formFactor&quot;: &quot;PHONE&quot;,
+    &quot;origin&quot;: true,
+    &quot;collectionPeriod&quot;: {
+      &quot;firstDate&quot;: {
+        &quot;year&quot;: 2026,
+        &quot;month&quot;: 8,
+        &quot;day&quot;: 23
+      },
+      &quot;lastDate&quot;: {
+        &quot;year&quot;: 2026,
+        &quot;month&quot;: 9,
+        &quot;day&quot;: 19
+      }
+    },
+    &quot;date&quot;: &quot;21.09.2026&quot;
+  },
+  &quot;metrics&quot;: [
+    {
+      &quot;url&quot;: &quot;evolutionshopping.com&quot;,
+      &quot;CLS&quot;: {
+        &quot;histogram&quot;: [
+          99.17,
+          0.65,
+          0.18
+        ],
+        &quot;p75&quot;: &quot;0.00&quot;,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;FCP&quot;: {
+        &quot;histogram&quot;: [
+          80.26,
+          12.03,
+          7.71
+        ],
+        &quot;p75&quot;: 1452,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;LCP&quot;: {
+        &quot;histogram&quot;: [
+          80.88,
+          11.67,
+          7.45
+        ],
+        &quot;p75&quot;: 1979,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;TTFB&quot;: {
+        &quot;histogram&quot;: [
+          70.92,
+          15,
+          14.08
+        ],
+        &quot;p75&quot;: 1170,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;INP&quot;: {
+        &quot;histogram&quot;: [
+          77.52,
+          18.13,
+          4.35
+        ],
+        &quot;p75&quot;: 186,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;RTT&quot;: {
+        &quot;histogram&quot;: [
+          14.13,
+          74.09,
+          11.78
+        ],
+        &quot;p75&quot;: 172,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;minimalGood&quot;: 77.52
+    },
+    {
+      &quot;url&quot;: &quot;www.rigatone.it&quot;,
+      &quot;CLS&quot;: {
+        &quot;histogram&quot;: [
+          99.27,
+          0.37,
+          0.36
+        ],
+        &quot;p75&quot;: &quot;0.00&quot;,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;FCP&quot;: {
+        &quot;histogram&quot;: [
+          80.84,
+          8.47,
+          10.69
+        ],
+        &quot;p75&quot;: 1277,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;LCP&quot;: {
+        &quot;histogram&quot;: [
+          73.92,
+          7.46,
+          18.61
+        ],
+        &quot;p75&quot;: 2595,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;TTFB&quot;: {
+        &quot;histogram&quot;: [
+          72.99,
+          14.09,
+          12.92
+        ],
+        &quot;p75&quot;: 937,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;INP&quot;: {
+        &quot;histogram&quot;: [
+          76.99,
+          22.11,
+          0.9
+        ],
+        &quot;p75&quot;: 187,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;RTT&quot;: {
+        &quot;histogram&quot;: [
+          27.5,
+          63.49,
+          9.01
+        ],
+        &quot;p75&quot;: 163,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;minimalGood&quot;: 73.92
+    },
+    {
+      &quot;url&quot;: &quot;www.ecoresortdeisiriti.it&quot;,
+      &quot;CLS&quot;: {
+        &quot;histogram&quot;: [
+          88.76,
+          4.78,
+          6.46
+        ],
+        &quot;p75&quot;: &quot;0.07&quot;,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;FCP&quot;: {
+        &quot;histogram&quot;: [
+          82.45,
+          9.69,
+          7.86
+        ],
+        &quot;p75&quot;: 1447,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;LCP&quot;: {
+        &quot;histogram&quot;: [
+          72.41,
+          15.65,
+          11.94
+        ],
+        &quot;p75&quot;: 2673,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;TTFB&quot;: {
+        &quot;histogram&quot;: [
+          85.61,
+          8.76,
+          5.62
+        ],
+        &quot;p75&quot;: 545,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;INP&quot;: {
+        &quot;histogram&quot;: [
+          85.08,
+          13.16,
+          1.76
+        ],
+        &quot;p75&quot;: 155,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;RTT&quot;: {
+        &quot;histogram&quot;: [
+          17.73,
+          73.07,
+          9.2
+        ],
+        &quot;p75&quot;: 157,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;minimalGood&quot;: 72.41
+    },
+    {
+      &quot;url&quot;: &quot;www.festoraglamping.com&quot;,
+      &quot;CLS&quot;: {
+        &quot;histogram&quot;: [
+          98.01,
+          1.04,
+          0.95
+        ],
+        &quot;p75&quot;: &quot;0.00&quot;,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;FCP&quot;: {
+        &quot;histogram&quot;: [
+          73.7,
+          15.32,
+          10.98
+        ],
+        &quot;p75&quot;: 1858,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;LCP&quot;: {
+        &quot;histogram&quot;: [
+          70.71,
+          17.05,
+          12.24
+        ],
+        &quot;p75&quot;: 2809,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;TTFB&quot;: {
+        &quot;histogram&quot;: [
+          64.31,
+          20.87,
+          14.81
+        ],
+        &quot;p75&quot;: 1245,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;INP&quot;: {
+        &quot;histogram&quot;: [],
+        &quot;p75&quot;: &quot;-&quot;,
+        &quot;rank&quot;: &quot;-&quot;
+      },
+      &quot;RTT&quot;: {
+        &quot;histogram&quot;: [],
+        &quot;p75&quot;: &quot;-&quot;,
+        &quot;rank&quot;: &quot;-&quot;
+      },
+      &quot;minimalGood&quot;: 70.71
+    },
+    {
+      &quot;url&quot;: &quot;www.oliomimi.com&quot;,
+      &quot;CLS&quot;: {
+        &quot;histogram&quot;: [
+          86.7,
+          4.39,
+          8.92
+        ],
+        &quot;p75&quot;: &quot;0.04&quot;,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;FCP&quot;: {
+        &quot;histogram&quot;: [
+          60.89,
+          22.45,
+          16.66
+        ],
+        &quot;p75&quot;: 2471,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;LCP&quot;: {
+        &quot;histogram&quot;: [
+          63.54,
+          21.77,
+          14.68
+        ],
+        &quot;p75&quot;: 3231,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;TTFB&quot;: {
+        &quot;histogram&quot;: [
+          44.89,
+          19.34,
+          35.76
+        ],
+        &quot;p75&quot;: 2251,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;INP&quot;: {
+        &quot;histogram&quot;: [
+          90.13,
+          9.06,
+          0.81
+        ],
+        &quot;p75&quot;: 114,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;RTT&quot;: {
+        &quot;histogram&quot;: [
+          30.68,
+          64.71,
+          4.61
+        ],
+        &quot;p75&quot;: 143,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;minimalGood&quot;: 63.54
+    },
+    {
+      &quot;url&quot;: &quot;www.diamantemhotel.it&quot;,
+      &quot;CLS&quot;: {
+        &quot;histogram&quot;: [
+          96.86,
+          2.47,
+          0.67
+        ],
+        &quot;p75&quot;: &quot;0.02&quot;,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;FCP&quot;: {
+        &quot;histogram&quot;: [
+          49.05,
+          36.05,
+          14.89
+        ],
+        &quot;p75&quot;: 2612,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;LCP&quot;: {
+        &quot;histogram&quot;: [
+          58.2,
+          23.83,
+          17.97
+        ],
+        &quot;p75&quot;: 3406,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;TTFB&quot;: {
+        &quot;histogram&quot;: [
+          30.78,
+          12.77,
+          56.45
+        ],
+        &quot;p75&quot;: 2384,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;INP&quot;: {
+        &quot;histogram&quot;: [
+          80.12,
+          17.83,
+          2.05
+        ],
+        &quot;p75&quot;: 183,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;RTT&quot;: {
+        &quot;histogram&quot;: [
+          37.74,
+          59.09,
+          3.17
+        ],
+        &quot;p75&quot;: 120,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;minimalGood&quot;: 58.2
+    },
+    {
+      &quot;url&quot;: &quot;www.mediturvillage.it&quot;,
+      &quot;CLS&quot;: {
+        &quot;histogram&quot;: [
+          89.5,
+          7.61,
+          2.89
+        ],
+        &quot;p75&quot;: &quot;0.07&quot;,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;FCP&quot;: {
+        &quot;histogram&quot;: [
+          41.49,
+          23.75,
+          34.75
+        ],
+        &quot;p75&quot;: 4173,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;LCP&quot;: {
+        &quot;histogram&quot;: [
+          42.19,
+          20.69,
+          37.13
+        ],
+        &quot;p75&quot;: 5512,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;TTFB&quot;: {
+        &quot;histogram&quot;: [
+          13.04,
+          21.19,
+          65.77
+        ],
+        &quot;p75&quot;: 4192,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;INP&quot;: {
+        &quot;histogram&quot;: [
+          97.36,
+          2.2,
+          0.44
+        ],
+        &quot;p75&quot;: 86,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;RTT&quot;: {
+        &quot;histogram&quot;: [
+          35,
+          56.03,
+          8.97
+        ],
+        &quot;p75&quot;: 139,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;minimalGood&quot;: 42.19
+    }
+  ]
+}</pre></div><div class="view-content" id="view-phone-url" data-astro-cid-qulgs7oj><h2 data-astro-cid-qulgs7oj>Report: Phone / Home Page</h2><pre class="data-box" data-astro-cid-qulgs7oj>{
+  &quot;params&quot;: {
+    &quot;formFactor&quot;: &quot;PHONE&quot;,
+    &quot;url&quot;: true,
+    &quot;collectionPeriod&quot;: {
+      &quot;firstDate&quot;: {
+        &quot;year&quot;: 2026,
+        &quot;month&quot;: 8,
+        &quot;day&quot;: 23
+      },
+      &quot;lastDate&quot;: {
+        &quot;year&quot;: 2026,
+        &quot;month&quot;: 9,
+        &quot;day&quot;: 19
+      }
+    },
+    &quot;date&quot;: &quot;21.09.2026&quot;
+  },
+  &quot;metrics&quot;: [
+    {
+      &quot;url&quot;: &quot;www.diamantemhotel.it/&quot;,
+      &quot;CLS&quot;: {
+        &quot;histogram&quot;: [
+          99.39,
+          0.33,
+          0.28
+        ],
+        &quot;p75&quot;: &quot;0.00&quot;,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;FCP&quot;: {
+        &quot;histogram&quot;: [
+          78.79,
+          11.55,
+          9.65
+        ],
+        &quot;p75&quot;: 1645,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;LCP&quot;: {
+        &quot;histogram&quot;: [
+          80.96,
+          11.69,
+          7.35
+        ],
+        &quot;p75&quot;: 2072,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;TTFB&quot;: {
+        &quot;histogram&quot;: [
+          79.09,
+          10.28,
+          10.63
+        ],
+        &quot;p75&quot;: 679,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;INP&quot;: {
+        &quot;histogram&quot;: [
+          76.87,
+          21.53,
+          1.61
+        ],
+        &quot;p75&quot;: 194,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;RTT&quot;: {
+        &quot;histogram&quot;: [
+          37.89,
+          58.43,
+          3.69
+        ],
+        &quot;p75&quot;: 116,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;minimalGood&quot;: 76.87
+    },
+    {
+      &quot;url&quot;: &quot;www.rigatone.it/&quot;,
+      &quot;CLS&quot;: {
+        &quot;histogram&quot;: [
+          99.28,
+          0.38,
+          0.34
+        ],
+        &quot;p75&quot;: &quot;0.00&quot;,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;FCP&quot;: {
+        &quot;histogram&quot;: [
+          80.73,
+          8.48,
+          10.79
+        ],
+        &quot;p75&quot;: 1277,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;LCP&quot;: {
+        &quot;histogram&quot;: [
+          73.97,
+          7.43,
+          18.6
+        ],
+        &quot;p75&quot;: 2595,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;TTFB&quot;: {
+        &quot;histogram&quot;: [
+          72.98,
+          14.13,
+          12.89
+        ],
+        &quot;p75&quot;: 937,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;INP&quot;: {
+        &quot;histogram&quot;: [
+          77,
+          22.12,
+          0.88
+        ],
+        &quot;p75&quot;: 187,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;RTT&quot;: {
+        &quot;histogram&quot;: [
+          27.52,
+          63.43,
+          9.05
+        ],
+        &quot;p75&quot;: 163,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;minimalGood&quot;: 73.97
+    },
+    {
+      &quot;url&quot;: &quot;www.ecoresortdeisiriti.it/&quot;,
+      &quot;CLS&quot;: {
+        &quot;histogram&quot;: [
+          94.13,
+          2.62,
+          3.25
+        ],
+        &quot;p75&quot;: &quot;0.07&quot;,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;FCP&quot;: {
+        &quot;histogram&quot;: [
+          79.6,
+          11.82,
+          8.58
+        ],
+        &quot;p75&quot;: 1626,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;LCP&quot;: {
+        &quot;histogram&quot;: [
+          72.77,
+          15.2,
+          12.03
+        ],
+        &quot;p75&quot;: 2673,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;TTFB&quot;: {
+        &quot;histogram&quot;: [
+          84.5,
+          9.96,
+          5.54
+        ],
+        &quot;p75&quot;: 603,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;INP&quot;: {
+        &quot;histogram&quot;: [
+          83.61,
+          14.5,
+          1.89
+        ],
+        &quot;p75&quot;: 162,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;RTT&quot;: {
+        &quot;histogram&quot;: [
+          19.71,
+          71.51,
+          8.78
+        ],
+        &quot;p75&quot;: 158,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;minimalGood&quot;: 72.77
+    },
+    {
+      &quot;url&quot;: &quot;evolutionshopping.com/&quot;,
+      &quot;CLS&quot;: {
+        &quot;histogram&quot;: [
+          99.35,
+          0.3,
+          0.35
+        ],
+        &quot;p75&quot;: &quot;0.00&quot;,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;FCP&quot;: {
+        &quot;histogram&quot;: [
+          78.78,
+          9.68,
+          11.53
+        ],
+        &quot;p75&quot;: 1553,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;LCP&quot;: {
+        &quot;histogram&quot;: [
+          72.12,
+          14.7,
+          13.18
+        ],
+        &quot;p75&quot;: 2854,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;TTFB&quot;: {
+        &quot;histogram&quot;: [
+          75.05,
+          9.06,
+          15.89
+        ],
+        &quot;p75&quot;: 800,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;INP&quot;: {
+        &quot;histogram&quot;: [
+          76.07,
+          20.41,
+          3.53
+        ],
+        &quot;p75&quot;: 195,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;RTT&quot;: {
+        &quot;histogram&quot;: [
+          16.6,
+          72.73,
+          10.66
+        ],
+        &quot;p75&quot;: 169,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;minimalGood&quot;: 72.12
+    },
+    {
+      &quot;url&quot;: &quot;www.festoraglamping.com/&quot;,
+      &quot;CLS&quot;: {
+        &quot;histogram&quot;: [
+          97.46,
+          1.34,
+          1.2
+        ],
+        &quot;p75&quot;: &quot;0.00&quot;,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;FCP&quot;: {
+        &quot;histogram&quot;: [
+          66.01,
+          19.3,
+          14.69
+        ],
+        &quot;p75&quot;: 2209,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;LCP&quot;: {
+        &quot;histogram&quot;: [
+          59.32,
+          22.96,
+          17.72
+        ],
+        &quot;p75&quot;: 3326,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;TTFB&quot;: {
+        &quot;histogram&quot;: [
+          62.28,
+          20.02,
+          17.7
+        ],
+        &quot;p75&quot;: 1384,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;INP&quot;: {
+        &quot;histogram&quot;: [
+          87.49,
+          10.24,
+          2.27
+        ],
+        &quot;p75&quot;: 150,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;RTT&quot;: {
+        &quot;histogram&quot;: [
+          23.15,
+          68.14,
+          8.71
+        ],
+        &quot;p75&quot;: 148,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;minimalGood&quot;: 59.32
+    },
+    {
+      &quot;url&quot;: &quot;www.mediturvillage.it/&quot;,
+      &quot;CLS&quot;: {
+        &quot;histogram&quot;: [
+          87.53,
+          10.31,
+          2.16
+        ],
+        &quot;p75&quot;: &quot;0.07&quot;,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;FCP&quot;: {
+        &quot;histogram&quot;: [
+          40.39,
+          13.96,
+          45.66
+        ],
+        &quot;p75&quot;: 4935,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;LCP&quot;: {
+        &quot;histogram&quot;: [
+          39.69,
+          11.84,
+          48.47
+        ],
+        &quot;p75&quot;: 6648,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;TTFB&quot;: {
+        &quot;histogram&quot;: [
+          12.28,
+          9.79,
+          77.93
+        ],
+        &quot;p75&quot;: 4693,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;INP&quot;: {
+        &quot;histogram&quot;: [
+          96.65,
+          2.89,
+          0.46
+        ],
+        &quot;p75&quot;: 91,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;RTT&quot;: {
+        &quot;histogram&quot;: [
+          35.72,
+          57.05,
+          7.23
+        ],
+        &quot;p75&quot;: 138,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;minimalGood&quot;: 39.69
+    }
+  ]
+}</pre></div><div class="view-content" id="view-desktop-origin" data-astro-cid-qulgs7oj><h2 data-astro-cid-qulgs7oj>Report: Desktop / Intero Sito</h2><pre class="data-box" data-astro-cid-qulgs7oj>{
+  &quot;params&quot;: {
+    &quot;formFactor&quot;: &quot;DESKTOP&quot;,
+    &quot;origin&quot;: true,
+    &quot;collectionPeriod&quot;: {
+      &quot;firstDate&quot;: {
+        &quot;year&quot;: 2026,
+        &quot;month&quot;: 8,
+        &quot;day&quot;: 23
+      },
+      &quot;lastDate&quot;: {
+        &quot;year&quot;: 2026,
+        &quot;month&quot;: 9,
+        &quot;day&quot;: 19
+      }
+    },
+    &quot;date&quot;: &quot;21.09.2026&quot;
+  },
+  &quot;metrics&quot;: [
+    {
+      &quot;url&quot;: &quot;www.ecoresortdeisiriti.it&quot;,
+      &quot;CLS&quot;: {
+        &quot;histogram&quot;: [
+          92.8,
+          4.85,
+          2.35
+        ],
+        &quot;p75&quot;: &quot;0.01&quot;,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;FCP&quot;: {
+        &quot;histogram&quot;: [
+          95.38,
+          2.42,
+          2.2
+        ],
+        &quot;p75&quot;: 703,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;LCP&quot;: {
+        &quot;histogram&quot;: [
+          88.64,
+          5.98,
+          5.37
+        ],
+        &quot;p75&quot;: 1796,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;TTFB&quot;: {
+        &quot;histogram&quot;: [
+          96.21,
+          2.21,
+          1.58
+        ],
+        &quot;p75&quot;: 220,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;INP&quot;: {
+        &quot;histogram&quot;: [
+          98.47,
+          0.61,
+          0.92
+        ],
+        &quot;p75&quot;: 57,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;RTT&quot;: {
+        &quot;histogram&quot;: [
+          55.1,
+          44.03,
+          0.87
+        ],
+        &quot;p75&quot;: 84,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;minimalGood&quot;: 88.64
+    },
+    {
+      &quot;url&quot;: &quot;evolutionshopping.com&quot;,
+      &quot;CLS&quot;: {
+        &quot;histogram&quot;: [
+          97.56,
+          1.22,
+          1.22
+        ],
+        &quot;p75&quot;: &quot;0.00&quot;,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;FCP&quot;: {
+        &quot;histogram&quot;: [
+          81.29,
+          11.98,
+          6.73
+        ],
+        &quot;p75&quot;: 1537,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;LCP&quot;: {
+        &quot;histogram&quot;: [
+          82.37,
+          12.38,
+          5.25
+        ],
+        &quot;p75&quot;: 1976,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;TTFB&quot;: {
+        &quot;histogram&quot;: [
+          54.4,
+          29.06,
+          16.54
+        ],
+        &quot;p75&quot;: 1449,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;INP&quot;: {
+        &quot;histogram&quot;: [
+          94.64,
+          3.33,
+          2.02
+        ],
+        &quot;p75&quot;: 76,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;RTT&quot;: {
+        &quot;histogram&quot;: [
+          58.08,
+          37.5,
+          4.42
+        ],
+        &quot;p75&quot;: 90,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;minimalGood&quot;: 82.37
+    },
+    {
+      &quot;url&quot;: &quot;www.oliomimi.com&quot;,
+      &quot;CLS&quot;: {
+        &quot;histogram&quot;: [
+          63.51,
+          27.49,
+          9
+        ],
+        &quot;p75&quot;: &quot;0.18&quot;,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;FCP&quot;: {
+        &quot;histogram&quot;: [
+          51.67,
+          34.24,
+          14.09
+        ],
+        &quot;p75&quot;: 2576,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;LCP&quot;: {
+        &quot;histogram&quot;: [
+          59.15,
+          26.42,
+          14.43
+        ],
+        &quot;p75&quot;: 3136,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;TTFB&quot;: {
+        &quot;histogram&quot;: [
+          25.23,
+          33.35,
+          41.43
+        ],
+        &quot;p75&quot;: 2384,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;INP&quot;: {
+        &quot;histogram&quot;: [
+          96.03,
+          3.7,
+          0.27
+        ],
+        &quot;p75&quot;: 63,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;RTT&quot;: {
+        &quot;histogram&quot;: [
+          54.86,
+          43.19,
+          1.95
+        ],
+        &quot;p75&quot;: 93,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;minimalGood&quot;: 59.15
+    },
+    {
+      &quot;url&quot;: &quot;www.diamantemhotel.it&quot;,
+      &quot;CLS&quot;: {
+        &quot;histogram&quot;: [
+          48.23,
+          19.05,
+          32.72
+        ],
+        &quot;p75&quot;: &quot;0.32&quot;,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;FCP&quot;: {
+        &quot;histogram&quot;: [
+          47.35,
+          41.53,
+          11.13
+        ],
+        &quot;p75&quot;: 2402,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;LCP&quot;: {
+        &quot;histogram&quot;: [
+          66.17,
+          23.52,
+          10.31
+        ],
+        &quot;p75&quot;: 2817,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;TTFB&quot;: {
+        &quot;histogram&quot;: [
+          30.13,
+          18.54,
+          51.33
+        ],
+        &quot;p75&quot;: 2255,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;INP&quot;: {
+        &quot;histogram&quot;: [
+          98.78,
+          0.82,
+          0.41
+        ],
+        &quot;p75&quot;: 51,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;RTT&quot;: {
+        &quot;histogram&quot;: [
+          75.6,
+          22.01,
+          2.39
+        ],
+        &quot;p75&quot;: 70,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;minimalGood&quot;: 48.23
+    },
+    {
+      &quot;url&quot;: &quot;www.mediturvillage.it&quot;,
+      &quot;CLS&quot;: {
+        &quot;histogram&quot;: [
+          88.39,
+          5.85,
+          5.76
+        ],
+        &quot;p75&quot;: &quot;0.06&quot;,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;FCP&quot;: {
+        &quot;histogram&quot;: [
+          25.97,
+          34.16,
+          39.87
+        ],
+        &quot;p75&quot;: 4390,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;LCP&quot;: {
+        &quot;histogram&quot;: [
+          25.85,
+          31.64,
+          42.5
+        ],
+        &quot;p75&quot;: 6025,
+        &quot;rank&quot;: &quot;poor&quot;
+      },
+      &quot;TTFB&quot;: {
+        &quot;histogram&quot;: [],
+        &quot;p75&quot;: &quot;-&quot;,
+        &quot;rank&quot;: &quot;-&quot;
+      },
+      &quot;INP&quot;: {
+        &quot;histogram&quot;: [],
+        &quot;p75&quot;: &quot;-&quot;,
+        &quot;rank&quot;: &quot;-&quot;
+      },
+      &quot;RTT&quot;: {
+        &quot;histogram&quot;: [
+          60.31,
+          29.99,
+          9.71
+        ],
+        &quot;p75&quot;: 94,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;minimalGood&quot;: 25.85
+    }
+  ]
+}</pre></div><div class="view-content" id="view-desktop-url" data-astro-cid-qulgs7oj><h2 data-astro-cid-qulgs7oj>Report: Desktop / Home Page</h2><pre class="data-box" data-astro-cid-qulgs7oj>{
+  &quot;params&quot;: {
+    &quot;formFactor&quot;: &quot;DESKTOP&quot;,
+    &quot;url&quot;: true,
+    &quot;collectionPeriod&quot;: {
+      &quot;firstDate&quot;: {
+        &quot;year&quot;: 2026,
+        &quot;month&quot;: 8,
+        &quot;day&quot;: 23
+      },
+      &quot;lastDate&quot;: {
+        &quot;year&quot;: 2026,
+        &quot;month&quot;: 9,
+        &quot;day&quot;: 19
+      }
+    },
+    &quot;date&quot;: &quot;21.09.2026&quot;
+  },
+  &quot;metrics&quot;: [
+    {
+      &quot;url&quot;: &quot;www.ecoresortdeisiriti.it/&quot;,
+      &quot;CLS&quot;: {
+        &quot;histogram&quot;: [
+          100,
+          0,
+          0
+        ],
+        &quot;p75&quot;: &quot;0.01&quot;,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;FCP&quot;: {
+        &quot;histogram&quot;: [
+          97.32,
+          1.79,
+          0.89
+        ],
+        &quot;p75&quot;: 758,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;LCP&quot;: {
+        &quot;histogram&quot;: [
+          89.31,
+          5.03,
+          5.65
+        ],
+        &quot;p75&quot;: 1447,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;TTFB&quot;: {
+        &quot;histogram&quot;: [
+          99.33,
+          0.67,
+          0
+        ],
+        &quot;p75&quot;: 247,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;INP&quot;: {
+        &quot;histogram&quot;: [
+          97.82,
+          0.54,
+          1.63
+        ],
+        &quot;p75&quot;: 58,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;RTT&quot;: {
+        &quot;histogram&quot;: [
+          59.41,
+          40.19,
+          0.4
+        ],
+        &quot;p75&quot;: 84,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;minimalGood&quot;: 89.31
+    },
+    {
+      &quot;url&quot;: &quot;www.diamantemhotel.it/&quot;,
+      &quot;CLS&quot;: {
+        &quot;histogram&quot;: [
+          100,
+          0,
+          0
+        ],
+        &quot;p75&quot;: &quot;0.02&quot;,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;FCP&quot;: {
+        &quot;histogram&quot;: [
+          84.04,
+          8.04,
+          7.92
+        ],
+        &quot;p75&quot;: 1347,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;LCP&quot;: {
+        &quot;histogram&quot;: [
+          85.05,
+          6.86,
+          8.09
+        ],
+        &quot;p75&quot;: 1861,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;TTFB&quot;: {
+        &quot;histogram&quot;: [
+          85.51,
+          5.97,
+          8.52
+        ],
+        &quot;p75&quot;: 419,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;INP&quot;: {
+        &quot;histogram&quot;: [
+          99.19,
+          0.81,
+          0
+        ],
+        &quot;p75&quot;: 47,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;RTT&quot;: {
+        &quot;histogram&quot;: [
+          76.27,
+          19.98,
+          3.75
+        ],
+        &quot;p75&quot;: 71,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;minimalGood&quot;: 85.05
+    },
+    {
+      &quot;url&quot;: &quot;evolutionshopping.com/&quot;,
+      &quot;CLS&quot;: {
+        &quot;histogram&quot;: [
+          96.74,
+          1.83,
+          1.43
+        ],
+        &quot;p75&quot;: &quot;0.00&quot;,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;FCP&quot;: {
+        &quot;histogram&quot;: [
+          83.86,
+          8.84,
+          7.3
+        ],
+        &quot;p75&quot;: 1196,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;LCP&quot;: {
+        &quot;histogram&quot;: [
+          75.33,
+          16.46,
+          8.21
+        ],
+        &quot;p75&quot;: 2435,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;TTFB&quot;: {
+        &quot;histogram&quot;: [
+          73.88,
+          7.5,
+          18.62
+        ],
+        &quot;p75&quot;: 846,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;INP&quot;: {
+        &quot;histogram&quot;: [
+          94.48,
+          4.27,
+          1.25
+        ],
+        &quot;p75&quot;: 81,
+        &quot;rank&quot;: &quot;good&quot;
+      },
+      &quot;RTT&quot;: {
+        &quot;histogram&quot;: [
+          61.56,
+          34.61,
+          3.83
+        ],
+        &quot;p75&quot;: 83,
+        &quot;rank&quot;: &quot;average&quot;
+      },
+      &quot;minimalGood&quot;: 75.33
+    }
+  ]
+}</pre></div></div></main></body></html><script type="module">var e=`phone`,t=`origin`;function n(){document.querySelectorAll(`[data-device]`).forEach(t=>{t.classList.toggle(`active`,t.getAttribute(`data-device`)===e)}),document.querySelectorAll(`[data-scope]`).forEach(e=>{e.classList.toggle(`active`,e.getAttribute(`data-scope`)===t)}),document.querySelectorAll(`.view-content`).forEach(e=>{e.classList.remove(`active`)});let n=document.getElementById(`view-${e}-${t}`);n&&n.classList.add(`active`)}document.querySelectorAll(`[data-device]`).forEach(t=>{t.addEventListener(`click`,()=>{e=t.getAttribute(`data-device`)||`phone`,n()})}),document.querySelectorAll(`[data-scope]`).forEach(e=>{e.addEventListener(`click`,()=>{t=e.getAttribute(`data-scope`)||`origin`,n()})});</script>
