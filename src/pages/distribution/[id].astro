@@ -1,12 +1,14 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import { readdir, readFile } from "fs/promises";
+import { readdir, readFile, mkdir } from "fs/promises";
 import path from "path";
 
 export async function getStaticPaths() {
   const DATA_DIR = "./src/_data";
   let files: string[] = [];
   try {
+    // Assicura che la cartella esista prima di leggerne il contenuto
+    await mkdir(DATA_DIR, { recursive: true });
     files = await readdir(DATA_DIR);
   } catch (e) {
     files = [];
